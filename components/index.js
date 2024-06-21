@@ -1,0 +1,5 @@
+export { default as Navbar } from "./Navbar"
+export { default as Hero } from "./Hero"
+export { default as Fintech } from "./Fintech"
+export { default as Medtech } from "./Medtech"
+export { default as Side } from "./Side"
