@@ -10,15 +10,15 @@ export const fintech = {
             caseStudies: [
                 {
                     title: "Receive money with tag or phone number",
-                    caseStudyUrl: ""
+                    caseStudyUrl: "/byte/receive-money"
                 },
                 {
                     title: "Add money on Byte",
-                    caseStudyUrl: ""
+                    caseStudyUrl: "/byte/add-money"
                 },
                 {
                     title: "Split expenses",
-                    caseStudyUrl: ""
+                    caseStudyUrl: "/byte/split-expenses"
                 }
             ]
         }

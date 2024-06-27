@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react'
 import { fintech as data } from '@/data'
+import Link from 'next/link'
+// import { Link }
 
 const Fintech = () => {
 
@@ -30,26 +32,32 @@ const Fintech = () => {
 
                                 <div className="first c-s-card " >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[0].title}</span>
-                                    <div className="link" >
-                                        <p>Read case study</p>
-                                        <img src="/arrow.svg" alt="" />
-                                    </div>
+                                    <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                        <div className="link" >
+                                            <p>Read case study</p>
+                                            <img src="/arrow.svg" alt="" />
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="rest" >
                                 <div className="second c-s-card " >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[1].title}</span>
-                                    <div className="link" >
-                                        <p>Read case study</p>
-                                        <img src="/arrow.svg" alt="" />
-                                    </div>
+                                    <Link href={startup.caseStudies[1].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                        <div className="link" >
+                                            <p>Read case study</p>
+                                            <img src="/arrow.svg" alt="" />
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="third c-s-card " >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[2].title}</span>
-                                    <div className="link" >
-                                        <p>Read case study</p>
-                                        <img src="/arrow.svg" alt="" />
-                                    </div>
+                                    <Link href={startup.caseStudies[2].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                        <div className="link" >
+                                            <p>Read case study</p>
+                                            <img src="/arrow.svg" alt="" />
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
