@@ -1,6 +1,11 @@
 import React from 'react'
 import { Navbar, ImageGrid } from '@/components'
 import Link from 'next/link'
+import Video from 'next-video';
+// import getStarted from '/videos/get-started.mp4';
+// import BackgroundVideo from 'next-video/background-video';
+// import newVid from 'https://media.graphassets.com/O9JPSJZ0RGe725RtAgMp';
+
 
 const Receive = () => {
 
@@ -65,8 +70,8 @@ const Receive = () => {
 
         <h1 className='case-h1'>Payment platform that empowers users to take control of their financial lives.</h1>
         {/* <ImageGrid images={images} grid={4} /> */}
-        <video width="100%" height="600" autoPlay loop muted controls preload="none">
-          <source src="/add-money.mp4" type="video/mp4" />
+        <video width="100%" height="600" autoplay="autoplay" loop="loop" muted defaultMuted playsinline  oncontextmenu="return false;"  preload="auto"  id="myVideo" controls >
+          <source src="https://media.graphassets.com/O9JPSJZ0RGe725RtAgMp" type="video/mp4" />
             {/* <track
               src="/path/to/captions.vtt"
               kind="subtitles"
@@ -75,6 +80,16 @@ const Receive = () => {
             /> */}
             Your browser does not support the video tag.
         </video>
+
+        {/* <Video src={getStarted} /> */}
+        {/* <BackgroundVideo src={newVid}>
+          <h1 style={{opacity: '0'}} >next-video</h1>
+          <p style={{opacity: '0'}} >
+            A React component for adding video to your Next.js application.
+            It extends both the video element and your Next app with features
+            for automatic video optimization.
+          </p>
+        </BackgroundVideo> */}
         <div className="details">
           <div>
             <h4>Contribution</h4>
