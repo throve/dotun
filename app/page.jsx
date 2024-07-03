@@ -6,7 +6,7 @@ export default function Home() {
       <div className="container">
       <Navbar color="black" />
       <Hero />
-      fff
+      
       <div className="projects">
         <Fintech />
         <Medtech />
