@@ -163,7 +163,7 @@ const Receive = () => {
           <div className="group">
              <h3>Related Case Studies</h3>
              <div className="case-cont">
-                <div className="c-s-card " >
+                <div className="c-s-card desk" >
                     <span style={{color: '#FF593B'}}  className="case-title" >Split <br /> expenses.</span>
                     <Link href={"/byte/split-expenses"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
@@ -172,7 +172,7 @@ const Receive = () => {
                         </div>
                     </Link>
                   </div>
-                <div className="c-s-card " >
+                <div className="c-s-card desk" >
                     <span style={{color: '#FF593B', width: "100%"}}  className="case-title" >Send and Receive <br /> money on Byte</span>
                     <Link href={"/byte/receive-money"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
@@ -181,6 +181,24 @@ const Receive = () => {
                         </div>
                     </Link>
                   </div>
+                  <Link className='mob' href={"/byte/split-expenses"} style={{textDecoration: "none", color: "#fff"}} >
+                <div className="c-s-card mob"  >
+                  <span style={{color: '#FF593B'}}  className="case-title" >Split <br /> expenses.</span>
+                  <div className="link" >
+                      <p>Read case study</p>
+                      <img src="/arrow.svg" alt="" />
+                  </div>
+                </div>
+              </Link>
+              <Link className='mob' href={"/byte/receive-money"} style={{textDecoration: "none", color: "#fff"}} >
+                <div className="c-s-card mob"  >
+                <span style={{color: '#FF593B', width: "100%"}}  className="case-title" >Send and Receive <br /> money on Byte</span>
+                        <div className="link" >
+                            <p>Read case study</p>
+                            <img src="/arrow.svg" alt="" />
+                        </div>
+                  </div>
+              </Link>
              </div>
           </div>
         </div>

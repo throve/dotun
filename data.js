@@ -38,7 +38,7 @@ export const medtech = {
             caseStudies: [
                 {
                     title: "Pharmacy, Diagnosis and Consultation",
-                    caseStudyUrl: ""
+                    caseStudyUrl: "/zapmedx"
                 },
               
             ]
@@ -49,7 +49,7 @@ export const medtech = {
             caseStudies: [
                 {
                     title: "Real time scheduling and care assistance",
-                    caseStudyUrl: ""
+                    caseStudyUrl: "/caree"
                 },
               
             ]
@@ -70,7 +70,7 @@ export const side = {
             caseStudies: [
                 {
                     title: "Design Inspiration and Job platform",
-                    caseStudyUrl: ""
+                    caseStudyUrl: "https://www.sparkhq.io/"
                 },
               
             ]
@@ -81,7 +81,7 @@ export const side = {
             caseStudies: [
                 {
                     title: "Find and buy apartment with Acasa",
-                    caseStudyUrl: ""
+                    caseStudyUrl: "https://www.behance.net/gallery/127617087/Acasa-ProTech-CaseStudy"
                 },
               
             ]

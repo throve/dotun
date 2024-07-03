@@ -30,7 +30,7 @@ const Fintech = () => {
                         <div className="case-studies" >
                             <div className="fist-div" >
 
-                                <div className="first c-s-card " >
+                                <div className="first c-s-card desk" >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[0].title}</span>
                                     <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
                                         <div className="link" >
@@ -39,9 +39,19 @@ const Fintech = () => {
                                         </div>
                                     </Link>
                                 </div>
+                                <Link className='mob' href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                    <div className="c-s-card mob"  >
+                                    <span style={{color: data.color, width: "80%"}}  className="case-title" >{startup.caseStudies[0].title}</span>
+
+                                            <div className="link" >
+                                                <p>Read case study</p>
+                                                <img src="/arrow.svg" alt="" />
+                                            </div>
+                                    </div>
+                                </Link>
                             </div>
                             <div className="rest" >
-                                <div className="second c-s-card " >
+                                <div className="second c-s-card desk" >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[1].title}</span>
                                     <Link href={startup.caseStudies[1].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
                                         <div className="link" >
@@ -50,7 +60,17 @@ const Fintech = () => {
                                         </div>
                                     </Link>
                                 </div>
-                                <div className="third c-s-card " >
+                                <Link className='mob' href={startup.caseStudies[1].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                    <div className="c-s-card mob"  >
+                                    <span style={{color: data.color, width: "80%"}}  className="case-title" >{startup.caseStudies[1].title}</span>
+
+                                            <div className="link" >
+                                                <p>Read case study</p>
+                                                <img src="/arrow.svg" alt="" />
+                                            </div>
+                                    </div>
+                                </Link>
+                                <div className="third c-s-card desk" >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[2].title}</span>
                                     <Link href={startup.caseStudies[2].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
                                         <div className="link" >
@@ -59,6 +79,16 @@ const Fintech = () => {
                                         </div>
                                     </Link>
                                 </div>
+                                <Link className='mob' href={startup.caseStudies[2].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                    <div className="c-s-card mob"  >
+                                    <span style={{color: data.color, width: "80%"}}  className="case-title" >{startup.caseStudies[2].title}</span>
+
+                                            <div className="link" >
+                                                <p>Read case study</p>
+                                                <img src="/arrow.svg" alt="" />
+                                            </div>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </div>

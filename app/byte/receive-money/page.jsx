@@ -57,8 +57,8 @@ const Receive = () => {
     { name: "Onboarding", url: "/byte-onboarding-8.webp" },
     { name: "Onboarding", url: "/byte-onboarding-9.webp" },
     { name: "Onboarding", url: "/byte-onboarding-10.webp" },
-    { name: "Homepage", url: "/byte-homepage.webp" },
-    { name: "Contact", url: "/byte-contact.webp" },
+    { name: "Homepage", url: "/byte-Homepage.webp" },
+    { name: "Contact", url: "/byte-Contact.webp" },
     { name: "Amount Screen", url: "/byte-amount-screen.webp" },
     { name: "Payment Option", url: "/byte-payment-option.webp" }
   ];
@@ -178,7 +178,7 @@ const Receive = () => {
           <div className="group">
              <h3>Related Case Studies</h3>
              <div className="case-cont">
-                <div className="c-s-card " >
+                <div className="c-s-card desk" >
                     <span style={{color: '#FF593B'}}  className="case-title" >Split <br /> expenses.</span>
                     <Link href={"/byte/split-expenses"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
@@ -187,7 +187,7 @@ const Receive = () => {
                         </div>
                     </Link>
                   </div>
-                <div className="c-s-card " >
+                <div className="c-s-card desk" >
                     <span style={{color: '#FF593B'}}  className="case-title" >Add money <br /> on Byte</span>
                     <Link href={"/byte/add-money"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
@@ -196,6 +196,24 @@ const Receive = () => {
                         </div>
                     </Link>
                   </div>
+              <Link className='mob' href={"/byte/split-expenses"} style={{textDecoration: "none", color: "#fff"}} >
+                <div className="c-s-card mob"  >
+                  <span style={{color: '#FF593B'}}  className="case-title" >Split <br /> expenses.</span>
+                  <div className="link" >
+                      <p>Read case study</p>
+                      <img src="/arrow.svg" alt="" />
+                  </div>
+                </div>
+              </Link>
+              <Link className='mob' href={"/byte/add-money"} style={{textDecoration: "none", color: "#fff"}} >
+                <div className="c-s-card mob"  >
+                  <span style={{color: '#FF593B'}}  className="case-title" >Add money <br /> on Byte</span>
+                  <div className="link" >
+                      <p>Read case study</p>
+                      <img src="/arrow.svg" alt="" />
+                  </div>
+                  </div>
+              </Link>
              </div>
           </div>
         </div>

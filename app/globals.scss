@@ -15,6 +15,21 @@ body {
   background: #fff;
 }
 
+.mob{
+  display: flex;
+  
+  @media (min-width: 768px){
+    display: none;
+  }
+}
+.desk{
+  display: none;
+  
+  @media (min-width: 768px){
+    display: flex;
+  }
+}
+
 Link{
   text-decoration: none;
   color: #fff;
@@ -128,6 +143,22 @@ p, li{
       .group{
         margin-bottom: 48px;
         width: 100%;
+
+        .c-s-card.desk{
+          display: none;
+
+          @media (min-width: 768px){
+            display: flex;
+          }
+        }
+
+        .c-s-card.mob{
+          display: flex;
+
+          @media (min-width: 768px){
+            display: none;
+          }
+        }
       }
 
       p, li{
@@ -481,7 +512,12 @@ p{
 
         .first{
           width: 100%;
-          // background-color: red;
+          // display: none;
+          // // background-color: red;
+
+          // @media (min-width: 768px){
+          //   display: unset;
+          // }
 
           span{
             width: 60%;
@@ -506,7 +542,7 @@ p{
       .c-s-card{
         width: 100%;
 
-        display: flex;
+        // display: flex;
         flex-direction: column;
         background-color: #404040;
         transition: all .4s ease;
@@ -604,6 +640,73 @@ p{
   }
 }
 
+.special-img-cont{
+  width: 100%;
+  gap: 17px;
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .left{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    @media (min-width: 768px){
+      gap: 38px;
+    }
+
+  }
+
+  .right{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    @media (min-width: 768px){
+      gap: 18px;
+    }
+
+  }
+
+  .img-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    row-gap: 12px;
+
+    span{
+      font-size: 8px;
+      font-style: italic;
+      color: #C0C0C0;
+    }
+    img{
+      width: 100%;
+    }
+
+    @media (min-width: 768px){
+      gap: 9px;
+
+      span{
+        font-size: 12px;
+        font-style: italic;
+        color: #C0C0C0;
+      }
+    }
+  }
+
+  @media (min-width: 768px){
+    gap: 44px;
+
+  }
+}
+
 
 .image-cont{
   width: 100%;
@@ -649,4 +752,53 @@ p{
 
 @media (min-width: 768px){
 
+}
+
+
+
+.mob{
+  display: flex;
+  
+  @media (min-width: 768px){
+    display: none;
+  }
+}
+.desk{
+  display: none;
+  
+  @media (min-width: 768px){
+    display: flex;
+  }
+}
+
+.c-s-card.desk{
+  display: none;
+
+  @media (min-width: 768px){
+    display: flex;
+  }
+}
+
+.c-s-card.mob{
+  display: flex;
+
+  @media (min-width: 768px){
+    display: none;
+  }
+}
+
+.first.c-s-card.desk{
+  display: none;
+
+  @media (min-width: 768px){
+    display: flex;
+  }
+}
+
+.first.c-s-card.mob{
+  display: flex;
+
+  @media (min-width: 768px){
+    display: none;
+  }
 }
