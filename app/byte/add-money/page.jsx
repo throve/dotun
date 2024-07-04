@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, ImageGrid } from '@/components'
+import { Navbar, ImageGrid, Footer } from '@/components'
 import Link from 'next/link'
 import Video from 'next-video';
 import getStarted from '/videos/get-started.mp4?thumbnailTime=0';
@@ -82,14 +82,14 @@ const Receive = () => {
         </video>
 
         {/* <Video src={getStarted} /> */}
-        <BackgroundVideo src={getStarted}>
+        {/* <BackgroundVideo src={getStarted}>
           <h1 style={{opacity: '0'}} >next-video</h1>
           <p style={{opacity: '0'}} >
             A React component for adding video to your Next.js application.
             It extends both the video element and your Next app with features
             for automatic video optimization.
           </p>
-        </BackgroundVideo>
+        </BackgroundVideo> */}
         <div className="details">
           <div>
             <h4>Contribution</h4>
@@ -202,7 +202,8 @@ const Receive = () => {
              </div>
           </div>
         </div>
-        <div className="footer">footer</div>
+        <Footer/>
+
       </div>
     </div>
   )

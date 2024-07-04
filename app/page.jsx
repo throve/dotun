@@ -1,5 +1,7 @@
-import Image from "next/image";
-import { Hero, Fintech, Medtech, Side, Navbar } from "@/components";
+
+import { Hero, Fintech, Medtech, Side, Navbar, IndexFooter } from "@/components";
+
+
 export default function Home() {
   return (
     <div className="home-page"  >
@@ -12,6 +14,7 @@ export default function Home() {
         <Medtech />
         <Side />
       </div>
+        <IndexFooter />
       </div>
     </div>
   );

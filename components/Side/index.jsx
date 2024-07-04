@@ -31,14 +31,14 @@ const Side = () => {
 
                                 <div className="first c-s-card desk" >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[0].title}</span>
-                                    <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                    <Link target='_blank' href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
                                         <div className="link" >
                                             <p>Read case study</p>
                                             <img src="/arrow.svg" alt="" />
                                         </div>
                                     </Link>
                                 </div>
-                                <Link className='mob' href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                <Link target='_blank'  className='mob' href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
                                     <div className="c-s-card mob"  >
                                     <span style={{color: data.color, width: "80%"}}  className="case-title" >{startup.caseStudies[0].title}</span>
 

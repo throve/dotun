@@ -14,7 +14,7 @@ const Fintech = () => {
     <div className="industry" >
         <div className="industry-tag" style={{backgroundColor: data.color}} >
             <img src={data.icon} alt="" />
-            <p>Fintech</p>
+            <p>FinTech</p>
         </div>
 
         <div className="companies">

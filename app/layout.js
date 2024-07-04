@@ -1,5 +1,4 @@
 
-import App from "@/components/App";
 import "./globals.scss";
 import { Inter } from "next/font/google";
 

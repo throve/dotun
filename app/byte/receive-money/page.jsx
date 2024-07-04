@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, ImageGrid } from '@/components'
+import { Navbar, ImageGrid, Footer } from '@/components'
 import Link from 'next/link'
 
 const Receive = () => {
@@ -217,7 +217,9 @@ const Receive = () => {
              </div>
           </div>
         </div>
-        <div className="footer">footer</div>
+ 
+        <Footer />
+
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 // "use client"
 
 import React from 'react'
-import { Navbar, ImageGrid } from '@/components'
+import { Navbar, ImageGrid, Footer } from '@/components'
 import Link from 'next/link'
 import { Wire_One } from 'next/font/google'
 
@@ -190,7 +190,7 @@ const Receive = () => {
              </div>
           </div>
         </div>
-        <div className="footer">footer</div>
+        <Footer />
       </div>
     </div>
   )
