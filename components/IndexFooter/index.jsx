@@ -1,4 +1,5 @@
 import React from 'react'
+import { Carousel } from '..';
 
 const IndexFooter = () => {
 
@@ -35,8 +36,12 @@ const IndexFooter = () => {
       
   return (
     <div className='index-footer' >
-        <div></div>
-        <div></div>
+        <div className="big-text" >
+            <span >What people say</span>
+        </div>
+        <div className='carousel-div' >
+            <Carousel />
+        </div>
         <div className='tools-exp' >
             <div className="exp">
                 <div className='exp-main' >
@@ -90,24 +95,24 @@ const IndexFooter = () => {
             </div>
         </div>
         <div className="socials-container">
-        <div className="links">
+            <div className="links">
 
-            <span>Socials</span>
-            <div className="socials-grid">
-                <p>LinkedIN</p>
-                <p>Instagram</p>
-                <p>Behance</p>
-                <p>Twitter (X)</p>
+                <span>Socials</span>
+                <div className="socials-grid">
+                    <p>LinkedIN</p>
+                    <p>Instagram</p>
+                    <p>Behance</p>
+                    <p>Twitter (X)</p>
+                </div>
             </div>
-        </div>
-        <button style={{marginTop: "40px" }} className="contact-button desk">
-            <span >Contact</span> 
-            <br/> 
-            <span  className="me">
-                me<img src="/arrow-up.svg" alt="" />
-            </span> 
-        </button>
-        <button className="contact-button mob" style={{ textAlign: "center", justifyContent: "center", marginTop: "40px" }} >Contact me</button>
+            <button style={{marginTop: "40px" }} className="contact-button desk">
+                <span >Contact</span> 
+                <br/> 
+                <span  className="me">
+                    me<img src="/arrow-up.svg" alt="" />
+                </span> 
+            </button>
+            <button className="contact-button mob" style={{ textAlign: "center", justifyContent: "center", marginTop: "40px" }} >Contact me</button>
         </div>
     </div>
   )
