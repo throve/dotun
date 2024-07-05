@@ -417,6 +417,12 @@ p{
   }
 }
 
+.index-footer{
+  @media (min-width: 768px){
+    margin-top: 32px;
+  }
+}
+
 .industry{
   color: #fff;
   background-color: #000;
@@ -756,6 +762,7 @@ p{
   background-color: #000;
   border-radius: 8px;
   padding: 16px 0px;
+  margin-bottom: 70px;
   .big-text{
     overflow: hidden;
     span{
@@ -963,6 +970,11 @@ p{
       font-size: 16px;
       color: #868686;
       cursor: pointer;
+
+      a{
+        color: inherit;
+        text-decoration: none;
+      }
     }
 
     @media (min-width: 768px){

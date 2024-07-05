@@ -99,10 +99,10 @@ const IndexFooter = () => {
 
                 <span>Socials</span>
                 <div className="socials-grid">
-                    <p>LinkedIN</p>
-                    <p>Instagram</p>
-                    <p>Behance</p>
-                    <p>Twitter (X)</p>
+                    <p><a  target="_blank" href={"https://www.linkedin.com/in/adedotun-ayodimeji-310697182/"} >LinkedIN</a></p>
+                    <p><a  target="_blank" href={"https://www.instagram.com/adedotun_ayodimeji?igsh=anlzemt6aW5yaGUz&utm_source=qr"} >Instagram</a></p>
+                    <p><a  target="_blank" href={"https://www.behance.net/dotunsdesign"} >Behance</a></p>
+                    <p><a  target="_blank" href={"https://x.com/ak_ayodimeji"} >Twitter(X)</a> </p>
                 </div>
             </div>
             <button style={{marginTop: "40px" }} className="contact-button desk">
