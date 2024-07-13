@@ -1,7 +1,16 @@
+"use client"
+
 import React from 'react'
 import { Carousel } from '..';
+import { useRouter } from 'next/navigation';
 
 const IndexFooter = () => {
+
+    const router = useRouter()
+
+    const navigate = x => {
+        router.push(x)
+    }
 
     const experiences = [
         {
@@ -105,7 +114,7 @@ const IndexFooter = () => {
                     <p><a  target="_blank" href={"https://x.com/ak_ayodimeji"} >Twitter(X)</a> </p>
                 </div>
             </div>
-            <button style={{marginTop: "40px" }} className="contact-button desk">
+            <button style={{marginTop: "40px" }} className="contact-button desk" onClick={() => navigate("mailto:adedotunayodimeji@gmail.com")} >
                 <span >Contact</span> 
                 <br/> 
                 <span  className="me">
