@@ -3,7 +3,7 @@ import React from 'react'
 const Hero = () => {
   return (
     <div className="hero" >
-        <h1>Crafting Memorable Digital Experiences with Precision and Passion.</h1>
+        <h1>Designing Simple and Effective Experiences for People.</h1>
 
         <div className="intro">
             <p className="header"><b>Meet Adedotun Ayodimeji</b> <img src="/emoji.svg" /></p>
