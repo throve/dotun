@@ -12,8 +12,8 @@ const Navbar = ({color}) => {
   const linkTo = (x) => router.push(x)
   return (
     <div className={`navbar ${inter.className}`} >
-        <div className="logo desk" onClick={() => linkTo('/')}  style={{color: color}} >Adedotun Ayodimeji <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} /> </div>
-        <div className="logo mob"  onClick={() => linkTo('/')}  >AY <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} /> </div>
+        <div className="logo desk" onClick={() => linkTo('/')}  style={{color: color}} >Adedotun Ayodimeji <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
+        <div className="logo mob"  onClick={() => linkTo('/')}  >AY <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
         {/* <h1 style={{color: "#fff"}} >{color}</h1> */}
         <a href="/cv-dotun.pdf" target='_blank' download={true} >
 

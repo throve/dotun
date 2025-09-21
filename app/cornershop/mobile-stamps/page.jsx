@@ -93,7 +93,7 @@ const CornershopMobileStamps = () => {
         <div className="case-info">
           <div className="group">
             <h3>Problem we are solving</h3>
-            <p>Many corner shops still use paper stamp cards to reward loyal customers. A typical example is 'spend £10, get a stamp. Collect 10 stamps, and get £10 off your next purchase.'</p>
+            <p>Many corner shops still use paper stamp cards to reward loyal customers. A typical example is &apos;spend £10, get a stamp. Collect 10 stamps, and get £10 off your next purchase.&apos;</p>
             <p>Clear problems with this system:</p>
             <ul>
               <li>Customers often forget to bring the paper card with them.</li>
@@ -106,7 +106,7 @@ const CornershopMobileStamps = () => {
 
           <div className="group">
             <h3>Solution</h3>
-            <p>The idea was to replace the paper card with a digital version that lives on the customer's phone.</p>
+            <p>The idea was to replace the paper card with a digital version that lives on the customer&apos;s phone.</p>
             <ul>
               <li>Customers can see all their participating shops on a map.</li>
               <li>Each shop has its own digital stamp card.</li>
@@ -140,7 +140,7 @@ const CornershopMobileStamps = () => {
             <ul>
               <li><strong>Home screen</strong>
                 <ul>
-                  <li>Shows the customer's active stamp cards.</li>
+                  <li>Shows the customer&apos;s active stamp cards.</li>
                   <li>Easy progress view so they can see how many stamps are left before they get a reward.</li>
                 </ul>
               </li>
@@ -152,7 +152,7 @@ const CornershopMobileStamps = () => {
               </li>
               <li><strong>Stamp collection</strong>
                 <ul>
-                  <li>Customer taps "Get Stamp" which displays a QR code.</li>
+                  <li>Customer taps &quot;Get Stamp&quot; which displays a QR code.</li>
                   <li>Shop owner scans the QR code to add a stamp.</li>
                 </ul>
               </li>
