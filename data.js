@@ -21,6 +21,16 @@ export const fintech = {
                     caseStudyUrl: "/byte/split-expenses"
                 }
             ]
+        },
+        {
+            name: "Cornershop",
+            des: "Cornershop Loyalty is a mobile app that rewards customers for every purchase at participating corner shops. Users collect digital stamps with each visit, unlocking rewards and exclusive offers. My work focused on designing a seamless, engaging experience that makes tracking stamps and redeeming rewards simple and enjoyable.",
+            caseStudies: [
+                {
+                    title: "Get mobile stamp everything you buy",
+                    caseStudyUrl: "/cornershop/mobile-stamps"
+                }
+            ]
         }
     ]
 }

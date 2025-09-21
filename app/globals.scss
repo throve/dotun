@@ -625,16 +625,7 @@ p{
     }
   }
 
-  .company:nth-of-type(2){
-    // border: 5px solid;
-
-    .c-s-card{
-      align-items: flex-end;
-      span{
-        text-align: right;
-      }
-    }
-  }
+  // Removed right alignment for second company to keep consistent left alignment
 }
 
 .case-h1{
