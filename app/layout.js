@@ -1,23 +1,39 @@
-
-import "./globals.scss";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import './globals.css'
+import Navbar from '@/components/Navbar'
 
 export const metadata = {
-  title: "Adedotun Ayodimeji",
-  description: "A user-experince and Interface designer that put real people at the center of development process",
-  icons: {
-    icon: "dotun.svg",
-  },
-};
+  title: 'Adedotun Ayodimeji - Portfolio',
+  description: 'UX/UI Designer Portfolio',
+}
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-          {children}
+      <head>
+        <link 
+          rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/gh/vercel/geist-font@main/packages/geist-sans/dist/geist-sans.css"
+          crossOrigin="anonymous"
+        />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.googleapis.com"
+        />
+        <link 
+          rel="preconnect" 
+          href="https://fonts.gstatic.com" 
+          crossOrigin="anonymous"
+        />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" 
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <Navbar />
+        {children}
       </body>
     </html>
-  );
+  )
 }
+
