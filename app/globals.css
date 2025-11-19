@@ -128,7 +128,7 @@ a {
 
 .hero-title {
   font-family: var(--font-geist);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--color-light-900);
   margin: 0 0 1rem 0;
@@ -170,7 +170,7 @@ a {
 
 .hero-description {
   font-family: var(--font-geist);
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--color-light-900);
   margin: 0;
@@ -336,7 +336,7 @@ a {
 /* Dark mode for showcase */
 @media (prefers-color-scheme: dark) {
   .showcase-image-container {
-    border-color: var(--color-dark-700);
+    border-color: var(--color-dark-100);
     background-color: var(--color-dark-0);
   }
 
@@ -454,7 +454,7 @@ a {
 /* Dark mode for full showcase */
 @media (prefers-color-scheme: dark) {
   .showcase-full-image-container {
-    border-color: var(--color-dark-700);
+    border-color: var(--color-dark-100);
     background-color: var(--color-dark-0);
   }
 
@@ -595,11 +595,15 @@ a {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  body {
+    margin: 0 16px;
+  }
+
   /* Grid and Container adjustments */
   .container {
     width: 100%;
     max-width: 100%;
-    padding: 0 var(--grid-gutter);
+    padding: 0;
   }
 
   .col-8 {
@@ -610,7 +614,7 @@ a {
   .hero-section {
     width: 100%;
     max-width: 100%;
-    padding: calc(4rem + 60px) var(--grid-gutter) 40px var(--grid-gutter);
+    padding: calc(4rem + 60px) 0 40px 0;
   }
 
   /* Project Showcase Section - 24px gap on mobile */
@@ -640,6 +644,11 @@ a {
     padding: 20px;
     height: auto;
     min-height: 400px;
+    cursor: default;
+  }
+
+  .showcase-image-container:hover .showcase-image {
+    transform: none;
   }
 
   .showcase-image {
@@ -647,6 +656,8 @@ a {
     max-width: 171px;
     height: auto;
     aspect-ratio: 171 / 370.27;
+    cursor: default;
+    transition: none;
   }
 
   .showcase-content {
@@ -666,6 +677,11 @@ a {
     padding: 20px;
     height: auto;
     min-height: 300px;
+    cursor: default;
+  }
+
+  .showcase-full-image-container:hover .showcase-full-image {
+    transform: none;
   }
 
   .showcase-full-image {
@@ -673,6 +689,8 @@ a {
     max-width: 100%;
     height: auto;
     aspect-ratio: 588 / 368.73;
+    cursor: default;
+    transition: none;
   }
 
   .showcase-full-content {
@@ -682,9 +700,20 @@ a {
 
   /* Navbar */
   .navbar-header {
-    width: 100%;
+    width: calc(100% - 32px);
     max-width: 100%;
-    padding: 1rem var(--grid-gutter);
+    padding: 1rem 0;
+    left: 16px;
+    right: 16px;
+    transform: translateX(0) translateY(0);
+  }
+
+  .navbar-header.visible {
+    transform: translateX(0) translateY(0);
+  }
+
+  .navbar-header.hidden {
+    transform: translateX(0) translateY(-100%);
   }
 
   .mobile-menu-button {

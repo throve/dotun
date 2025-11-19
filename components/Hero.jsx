@@ -114,7 +114,7 @@ export default function Hero() {
             </div>
           )
         })}
-        <p className="hero-title">UX/UI Designer</p>
+        <p className="hero-title">UX/UI Designer | London, UK.</p>
         
         <div className="hero-logos">
           {logos.map((logo, index) => (

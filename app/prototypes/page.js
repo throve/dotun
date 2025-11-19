@@ -29,7 +29,7 @@ export default function PrototypesPage() {
                   />
                 </div>
                 <div className="showcase-content">
-                  <h3 className="showcase-title">{project.title}.</h3>
+                  <h3 className="showcase-title">{project.title}</h3>
                   <p className="showcase-status">{project.status}</p>
                   <p className="showcase-description">
                     {project.description}

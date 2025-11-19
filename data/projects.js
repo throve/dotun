@@ -9,7 +9,7 @@ export const projects = [
     description: 'Connecting everyone through payment Byte allow users to pay and receive money with phone number and tag.',
     showOnHome: true,
     link: '/',
-    image: '/byte-3-splash.webp',
+    image: '/X-35.webp',
     status: 'Live. 2021',
   },
   {

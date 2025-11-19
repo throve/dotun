@@ -14,13 +14,13 @@ export default function Home() {
             <div className="showcase-item">
               <div className="showcase-image-container">
                 <img 
-                  src="/byte-3-splash.webp" 
+                  src="/X-35.webp" 
                   alt="Byte - Peer to Peer Payment" 
                   className="showcase-image"
                 />
               </div>
               <div className="showcase-content">
-                <h3 className="showcase-title">Byte - Peer to Peer Payment.</h3>
+                <h3 className="showcase-title">Byte - Peer to Peer Payment</h3>
                 <p className="showcase-status">Live. 2021</p>
                 <p className="showcase-description">
                   Connecting everyone through payment Byte allow users to
@@ -37,7 +37,7 @@ export default function Home() {
                 />
               </div>
               <div className="showcase-content">
-                <h3 className="showcase-title">Byte (Rebranded) - Split payment.</h3>
+                <h3 className="showcase-title">Byte (Rebranded) - Split payment</h3>
                 <p className="showcase-status">Live. 2022</p>
                 <p className="showcase-description">
                   Connecting everyone through payment Byte allow users to
@@ -82,7 +82,7 @@ export default function Home() {
                 />
               </div>
               <div className="showcase-content">
-                <h3 className="showcase-title">Caree - Adult care.</h3>
+                <h3 className="showcase-title">Caree - Adult care</h3>
                 <p className="showcase-status">University project. 2022</p>
                 <p className="showcase-description">
                   Connecting everyone through payment Byte allow users to
@@ -99,7 +99,7 @@ export default function Home() {
                 />
               </div>
               <div className="showcase-content">
-                <h3 className="showcase-title">Littleseconds IOS app.</h3>
+                <h3 className="showcase-title">Littleseconds IOS app</h3>
                 <p className="showcase-status">Prototype</p>
                 <p className="showcase-description">
                   Connecting everyone through payment Byte allow users to
@@ -161,7 +161,7 @@ export default function Home() {
                 />
               </div>
               <div className="showcase-content">
-                <h3 className="showcase-title">Byte - Add money.</h3>
+                <h3 className="showcase-title">Byte - Add money</h3>
                 <p className="showcase-status">Prototype</p>
                 <p className="showcase-description">
                   Connecting everyone through payment Byte allow users to
