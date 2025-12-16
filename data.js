@@ -10,15 +10,33 @@ export const fintech = {
             caseStudies: [
                 {
                     title: "Receive money with tag or phone number",
-                    caseStudyUrl: "/byte/receive-money"
+                    caseStudyUrl: "/byte/receive-money",
+                    header: "Send and receive money using a username or phone number",
+                    images: [
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765891044/p1_img1_sa6tqb.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765891044/p1_img3_jmvtqk.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765891044/p1_img2_kudsv9.webp"
+                    ]
                 },
                 {
                     title: "Add money on Byte",
-                    caseStudyUrl: "/byte/add-money"
+                    caseStudyUrl: "/byte/add-money",
+                    header: "Add money or pay with your connected bank or card.",
+                    images: [
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765892698/p2_img1_pamkxx.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765892698/p2_img2_zxgzcz.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765892698/p2_img3_wiwey6.webp"
+                    ]
                 },
                 {
                     title: "Split expenses",
-                    caseStudyUrl: "/byte/split-expenses"
+                    caseStudyUrl: "/byte/split-expenses",
+                    header: "After a night out, split payments with your friends",
+                    images: [
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765894985/p3_img1_i1uc5m.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765894985/p3_img2_vv22lh.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765894985/p3_img3_p1mrsk.webp"
+                    ]
                 }
             ]
         },
@@ -28,7 +46,13 @@ export const fintech = {
             caseStudies: [
                 {
                     title: "Get mobile stamp everything you buy",
-                    caseStudyUrl: "/cornershop/mobile-stamps"
+                    caseStudyUrl: "/cornershop/mobile-stamps",
+                    header: "Get a mobile stamp for everything you buy in a corner shop",
+                    images: [
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765896754/p4_img1_ksq79d.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765896754/p4_img2_ov8qdz.webp",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765896755/p4_img3_eiiyzk.webp"
+                    ]
                 }
             ]
         }

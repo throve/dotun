@@ -163,7 +163,7 @@ const Receive = () => {
                     <span style={{color: '#FAB0F7'}}  className="case-title" >Real time scheduling and care assistance</span>
                     <Link href={"/caree"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
-                            <p>Read case study</p>
+                            <p>View project</p>
                             <img src="/arrow.svg" alt="" />
                         </div>
                     </Link>
@@ -172,7 +172,7 @@ const Receive = () => {
                 <div className="c-s-card mob"  >
                     <span style={{color: '#FAB0F7', width: "80%"}}  className="case-title" >Real time scheduling and care assistance</span>
                         <div className="link" >
-                            <p>Read case study</p>
+                            <p>View project</p>
                             <img src="/arrow.svg" alt="" />
                         </div>
                   </div>

@@ -178,7 +178,7 @@ const CornershopMobileStamps = () => {
                 <span style={{color: '#FF593B'}} className="case-title">Send and Receive <br /> money on Byte</span>
                 <Link href={"/byte/receive-money"} style={{textDecoration: "none", color: "#fff"}}>
                   <div className="link">
-                    <p>Read case study</p>
+                    <p>View project</p>
                     <img src="/arrow.svg" alt="" />
                   </div>
                 </Link>
@@ -187,7 +187,7 @@ const CornershopMobileStamps = () => {
                 <span style={{color: '#FF593B'}} className="case-title">Split <br /> expenses</span>
                 <Link href={"/byte/split-expenses"} style={{textDecoration: "none", color: "#fff"}}>
                   <div className="link">
-                    <p>Read case study</p>
+                    <p>View project</p>
                     <img src="/arrow.svg" alt="" />
                   </div>
                 </Link>
@@ -196,7 +196,7 @@ const CornershopMobileStamps = () => {
                 <div className="c-s-card mob">
                   <span style={{color: '#FF593B'}} className="case-title">Send and Receive <br /> money on Byte</span>
                   <div className="link">
-                    <p>Read case study</p>
+                    <p>View project</p>
                     <img src="/arrow.svg" alt="" />
                   </div>
                 </div>
@@ -205,7 +205,7 @@ const CornershopMobileStamps = () => {
                 <div className="c-s-card mob">
                   <span style={{color: '#FF593B'}} className="case-title">Split <br /> expenses</span>
                   <div className="link">
-                    <p>Read case study</p>
+                    <p>View project</p>
                     <img src="/arrow.svg" alt="" />
                   </div>
                 </div>

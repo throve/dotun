@@ -182,7 +182,7 @@ const Receive = () => {
                     <span style={{color: '#FF593B'}}  className="case-title" >Split <br /> expenses.</span>
                     <Link href={"/byte/split-expenses"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
-                            <p>Read case study</p>
+                            <p>View project</p>
                             <img src="/arrow.svg" alt="" />
                         </div>
                     </Link>
@@ -191,7 +191,7 @@ const Receive = () => {
                     <span style={{color: '#FF593B'}}  className="case-title" >Add money <br /> on Byte</span>
                     <Link href={"/byte/add-money"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
-                            <p>Read case study</p>
+                            <p>View project</p>
                             <img src="/arrow.svg" alt="" />
                         </div>
                     </Link>
@@ -200,7 +200,7 @@ const Receive = () => {
                 <div className="c-s-card mob"  >
                   <span style={{color: '#FF593B'}}  className="case-title" >Split <br /> expenses.</span>
                   <div className="link" >
-                      <p>Read case study</p>
+                      <p>View project</p>
                       <img src="/arrow.svg" alt="" />
                   </div>
                 </div>
@@ -209,7 +209,7 @@ const Receive = () => {
                 <div className="c-s-card mob"  >
                   <span style={{color: '#FF593B'}}  className="case-title" >Add money <br /> on Byte</span>
                   <div className="link" >
-                      <p>Read case study</p>
+                      <p>View project</p>
                       <img src="/arrow.svg" alt="" />
                   </div>
                   </div>

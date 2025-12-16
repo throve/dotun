@@ -170,7 +170,7 @@ const Receive = () => {
                     Diagnosis and Consultation.</span>
                     <Link href={"/zapmedx"} style={{textDecoration: "none", color: "#fff"}} >
                         <div className="link" >
-                            <p>Read case study</p>
+                            <p>View project</p>
                             <img src="/arrow.svg" alt="" />
                         </div>
                     </Link>
@@ -180,7 +180,7 @@ const Receive = () => {
                     <span style={{color: '#FAB0F7', width: "80%"}}  className="case-title" >Pharmacy,
                     Diagnosis and Consultation.</span>
                         <div className="link" >
-                            <p>Read case study</p>
+                            <p>View project</p>
                             <img src="/arrow.svg" alt="" />
                         </div>
                   </div>

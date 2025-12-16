@@ -87,14 +87,14 @@ const Side = () => {
                         <div className="second c-s-card " >
                             <span style={{color: data.color}}  className="case-title" >{data.startups[1].caseStudies[1].title}</span>
                             <div className="link" >
-                                <p>Read case study</p>
+                                <p>View project</p>
                                 <img src="/arrow.svg" alt="" />
                             </div>
                         </div>
                         <div className="third c-s-card " >
                             <span style={{color: data.color}}  className="case-title" >{data.startups[1].caseStudies[2].title}</span>
                             <div className="link" >
-                                <p>Read case study</p>
+                                <p>View project</p>
                                 <img src="/arrow.svg" alt="" />
                             </div>
                         </div>

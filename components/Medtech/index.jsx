@@ -33,7 +33,7 @@ const Medtech = () => {
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[0].title}</span>
                                     <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
                                         <div className="link" >
-                                            <p>Read case study</p>
+                                            <p>View project</p>
                                             <img src="/arrow.svg" alt="" />
                                         </div>
                                     </Link>
@@ -43,7 +43,7 @@ const Medtech = () => {
                                     <span style={{color: data.color, width: "80%"}}  className="case-title" >{startup.caseStudies[0].title}</span>
 
                                             <div className="link" >
-                                                <p>Read case study</p>
+                                                <p>View project</p>
                                                 <img src="/arrow.svg" alt="" />
                                             </div>
                                     </div>
@@ -53,14 +53,14 @@ const Medtech = () => {
                                 <div className="second c-s-card " >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[1].title}</span>
                                     <div className="link" >
-                                        <p>Read case study</p>
+                                        <p>View project</p>
                                         <img src="/arrow.svg" alt="" />
                                     </div>
                                 </div>
                                 <div className="third c-s-card " >
                                     <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[2].title}</span>
                                     <div className="link" >
-                                        <p>Read case study</p>
+                                        <p>View project</p>
                                         <img src="/arrow.svg" alt="" />
                                     </div>
                                 </div>
