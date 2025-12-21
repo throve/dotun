@@ -105,7 +105,8 @@ const Receive = () => {
           <div className="group">
 
             <h3>Introduction</h3>
-            <p>In Nigeria, the size of mobile payments has risen dramatically over the last few years in response to global, domestic, market, technological, and regulatory factors. Data from the Nigeria Interbank Settlement System (NIBSS) show that while the volume of mobile transactions was 51 million in 2017, it reached 410 million in 2019 representing a growth of about 703.9 per cent (see Figure 1a). Similarly, the value of mobile transactions increased sharply from N196.3 billion in 2017 to N828.1 billion in 2019. The value of mobile transactions (N853.7 billion) recorded in the first five-months of 2020 surpassed the total amount recorded in 2019 by 3.1 per cent. The phenomenal growth in the value of mobile payments, especially in May 2020 (Figure 1b) can be partly explained by the effects of the restricted human movements associated with the lockdown measures implemented in response to the Covid-19 pandemic. CBN Journal of Applied Statistics Vol. 12 No. 1 (June 2021).</p>
+            <p>Mobile payments in Nigeria have grown fast, but using them has not always felt simple. During lockdown, more people relied on their phones to send and receive money, often for the first time. Many of the existing apps were hard to understand, slow, or built for experts rather than everyday users.</p>
+            <p>Byte was created to solve this gap. The goal was to make sending and receiving money feel as easy as sending a message. This case study focuses on how we designed a clear, fast, and trustworthy payment experience for people who needed it most.</p>
           </div>
 
           <div className="group">
