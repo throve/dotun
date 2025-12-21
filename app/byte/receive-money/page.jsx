@@ -111,19 +111,22 @@ const Receive = () => {
 
           <div className="group">
             <h3>Problem Definition </h3>
-            <p>Payment downtime with Nigeria banks rise by 32% in Nigeria. meaning for every 10 mobile money transfer, only 6 gets to it destination. Customers need convenience, support and faster payment options..</p>
+            <p>Payment downtime across Nigerian banks has increased by over 30 percent. In practice, this means many peer to peer transfers fail, get delayed, or arrive without clear confirmation. For users, this creates stress, loss of trust, and extra effort chasing support or reversing failed payments.</p>
+            <p>People want payments that are fast, reliable, and easy to understand. Instead, they face unclear errors, long delays, and poor communication when something goes wrong.</p>
+            <p>The key questions we needed to answer were:</p>
             <ul style={{fontStyle: "italic"}} >
-              <li>How can we make peer payment more reliable and fast in Nigeria?</li>
-              <li>How can we eliminate downtime in our banking system?</li>
-              <li>How can we make peer payment more fun to use?</li>
+              <li>How can we make peer to peer payments feel more reliable and transparent?</li>
+              <li>How can we reduce the impact of bank downtime on everyday users?</li>
+              <li>How can we design a payment experience people actually enjoy using?</li>
             </ul>
-            <p>Before we answer those questions, we must understand the cause</p>
+            <p>Before designing solutions, we looked at the root causes:</p>
             <ul>
-              <li>Lack of adequate infrastructure </li>
-              <li>Inter bank transaction is handle by NIBSS </li>
-              <li>Poor user experience </li>
-              <li>Public acceptability </li>
+              <li>Limited and fragile banking infrastructure</li>
+              <li>Interbank transfers controlled by a single central system (NIBSS)</li>
+              <li>Poor error handling and feedback in existing apps</li>
+              <li>Low trust caused by repeated failed transactions</li>
             </ul>
+            <p>This understanding shaped how we approached the product design.</p>
           </div>
 
           <div className="group">
