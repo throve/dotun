@@ -131,14 +131,16 @@ const Receive = () => {
 
           <div className="group">
             <h3>Solution</h3>
-            <p>Byte aims to connect everyone through payment, by enable users to pay anyone with an email, phone number or bytetag, using their linked bank account or credit card and provide following </p>
+            <p>Byte was designed to make peer to peer payments faster, more reliable, and easier to use. The goal was to remove the common friction people face when sending money between banks.</p>
+            <p>Instead of relying on bank details, Byte allows users to send money using a phone number, email address, or a unique Byte tag. Payments are funded through linked bank accounts or cards, but the transfer itself happens within Byte.</p>
+            <p>This approach helped us:</p>
             <ul>
-              <li>Reduce payment downtime, experience fast transfer time.</li>
-              <li>Go beyond just payment with peers</li>
-              <li>Save money on transaction and monthly fees.</li>
+              <li>Reduce failed and delayed transfers</li>
+              <li>Make payments feel simple and familiar</li>
+              <li>Lower transaction costs for users</li>
+              <li>Create a payment experience that feels modern and easy to trust</li>
             </ul>
-            <p>To , achieve the above solution, We must do without Nigeria Inter-Bank settlement system for our peer payment.
-            How can we archive this?</p>
+            <p>To achieve this, we made a deliberate decision to avoid direct interbank transfers for peer payments, which are largely handled by the Nigeria Inter Bank Settlement System and are a major source of downtime.</p>
           </div>
 
           <div className="group">
