@@ -1,8 +1,49 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
 import { Navbar, ImageGrid, Footer } from '@/components'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Receive = () => {
+  const [activeTab, setActiveTab] = useState('introduction')
+  const router = useRouter()
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const navbarHeight = 80 // Approximate navbar height
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+      setActiveTab(sectionId)
+    }
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['introduction', 'key-decisions', 'metrics']
+      const scrollPosition = window.scrollY + 100
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section) {
+          const sectionTop = section.offsetTop
+          if (scrollPosition >= sectionTop) {
+            setActiveTab(sections[i])
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const images = [
     {
@@ -66,6 +107,33 @@ const Receive = () => {
     <div className='case-study' >
       <div className="container">
         <Navbar color={"white"} />
+        
+        <div className="receive-money-navbar">
+          <div className="receive-nav-logo" onClick={() => router.push('/')} style={{cursor: 'pointer'}}>Adedotun Ayodimeji <img src="/emoji-w.svg" alt="" /></div>
+          <div className="receive-nav-tabs">
+            <button 
+              className={activeTab === 'introduction' ? 'active' : ''}
+              onClick={() => scrollToSection('introduction')}
+            >
+              Introduction
+            </button>
+            <button 
+              className={activeTab === 'key-decisions' ? 'active' : ''}
+              onClick={() => scrollToSection('key-decisions')}
+            >
+              Key decisions
+            </button>
+            <button 
+              className={activeTab === 'metrics' ? 'active' : ''}
+              onClick={() => scrollToSection('metrics')}
+            >
+              Metrics
+            </button>
+          </div>
+          <a href="/cv-dotun.pdf" target='_blank' download={true}>
+            <button className="receive-cv-button">Download CV</button>
+          </a>
+        </div>
 
         <h1 className='case-h1'  >Connecting everyone through payment Byte allow users to pay and receive money with phone number and tag.</h1>
         <ImageGrid images={images} grid={4} />
@@ -102,44 +170,45 @@ const Receive = () => {
         </div>
         
         <div className="case-info">
-          <div className="group">
+          <div className="group" id="introduction">
 
             <h3>Introduction</h3>
-            <p>In Nigeria, the size of mobile payments has risen dramatically over the last few years in response to global, domestic, market, technological, and regulatory factors. Data from the Nigeria Interbank Settlement System (NIBSS) show that while the volume of mobile transactions was 51 million in 2017, it reached 410 million in 2019 representing a growth of about 703.9 per cent (see Figure 1a). Similarly, the value of mobile transactions increased sharply from N196.3 billion in 2017 to N828.1 billion in 2019. The value of mobile transactions (N853.7 billion) recorded in the first five-months of 2020 surpassed the total amount recorded in 2019 by 3.1 per cent. The phenomenal growth in the value of mobile payments, especially in May 2020 (Figure 1b) can be partly explained by the effects of the restricted human movements associated with the lockdown measures implemented in response to the Covid-19 pandemic. CBN Journal of Applied Statistics Vol. 12 No. 1 (June 2021).</p>
+            <p>Mobile payments in Nigeria have grown fast, but using them has not always felt simple. During lockdown, more people relied on their phones to send and receive money, often for the first time. Many of the existing apps were hard to understand, slow, or built for experts rather than everyday users.</p>
+            <p>Byte was created to solve this gap. The goal was to make sending and receiving money feel as easy as sending a message. This case study focuses on how we designed a clear, fast, and trustworthy payment experience for people who needed it most.</p>
           </div>
 
           <div className="group">
             <h3>Problem Definition </h3>
-            <p>Payment downtime with Nigeria banks rise by 32% in Nigeria. meaning for every 10 mobile money transfer, only 6 gets to it destination. Customers need convenience, support and faster payment options..</p>
+            <p>Payment downtime across Nigerian banks has increased by over 30 percent. In practice, this means many peer to peer transfers fail, get delayed, or arrive without clear confirmation. For users, this creates stress, loss of trust, and extra effort chasing support or reversing failed payments.</p>
+            <p>People want payments that are fast, reliable, and easy to understand. Instead, they face unclear errors, long delays, and poor communication when something goes wrong.</p>
+            <p>The key questions we needed to answer were:</p>
             <ul style={{fontStyle: "italic"}} >
-              <li>How can we make peer payment more reliable and fast in Nigeria?</li>
-              <li>How can we eliminate downtime in our banking system?</li>
-              <li>How can we make peer payment more fun to use?</li>
+              <li>How can we make peer to peer payments feel more reliable and transparent?</li>
+              <li>How can we reduce the impact of bank downtime on everyday users?</li>
+              <li>How can we design a payment experience people actually enjoy using?</li>
             </ul>
-            <p>Before we answer those questions, we must understand the cause</p>
+            <p>Before designing solutions, we looked at the root causes:</p>
             <ul>
-              <li>Lack of adequate infrastructure </li>
-              <li>Inter bank transaction is handle by NIBSS </li>
-              <li>Poor user experience </li>
-              <li>Public acceptability </li>
+              <li>Limited and fragile banking infrastructure</li>
+              <li>Interbank transfers controlled by a single central system (NIBSS)</li>
+              <li>Poor error handling and feedback in existing apps</li>
+              <li>Low trust caused by repeated failed transactions</li>
             </ul>
+            <p>This understanding shaped how we approached the product design.</p>
           </div>
 
           <div className="group">
             <h3>Solution</h3>
-            <p>Byte aims to connect everyone through payment, by enable users to pay anyone with an email, phone number or bytetag, using their linked bank account or credit card and provide following </p>
+            <p>Byte was designed to make peer to peer payments faster, more reliable, and easier to use. The goal was to remove the common friction people face when sending money between banks.</p>
+            <p>Instead of relying on bank details, Byte allows users to send money using a phone number, email address, or a unique Byte tag. Payments are funded through linked bank accounts or cards, but the transfer itself happens within Byte.</p>
+            <p>This approach helped us:</p>
             <ul>
-              <li>Reduce payment downtime, experience fast transfer time.</li>
-              <li>Go beyond just payment with peers</li>
-              <li>Save money on transaction and monthly fees.</li>
+              <li>Reduce failed and delayed transfers</li>
+              <li>Make payments feel simple and familiar</li>
+              <li>Lower transaction costs for users</li>
+              <li>Create a payment experience that feels modern and easy to trust</li>
             </ul>
-            <p>To , achieve the above solution, We must do without Nigeria Inter-Bank settlement system for our peer payment.
-            How can we archive this?</p>
-          </div>
-
-          <div className="group">
-            <h3>Ideation</h3>
-            <p>Right from the beginning and brainstorming stage for byte, we wanted a platform that makes payment more fun while maintaining its speed and reliability. One of the ways is to do  without traditional bank account and bank name type of payment. Paying users , friends , family with Phone Number and Email will be more fun. With that, we ticked our  second box. Since payment is all done with mobile number or email or byte tag, we have successfully bypass the Nigeria Inter-Bank settlement system for our peer payment which is mostly the cause of down payment because of its poor infrastructure.</p>
+            <p>To achieve this, we made a deliberate decision to avoid direct interbank transfers for peer payments, which are largely handled by the Nigeria Inter Bank Settlement System and are a major source of downtime.</p>
           </div>
 
           <div className="group">
@@ -162,6 +231,38 @@ const Receive = () => {
 
           <ImageGrid images={[{ name: "", url: "/byte-wireframes.webp" }]} grid={1} />
           
+          <div className="group" id="key-decisions">
+            <h3>Key decisions</h3>
+            <h4>Designing the Transfer Flow</h4>
+            <p>We knew that for Byte to succeed, the core action—moving money—had to be effortless. We explored three distinct interface directions to find the balance between speed, clarity, and trust.</p>
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 1:</strong> Our first exploration focused purely on utility. We used a heavy blue background and a linear list of actions ("Send Money," "Request Money," "Pay Bills").</p>
+            <p style={{marginBottom: "4px"}}><strong>The Logic:</strong> We thought a clear list would help users find exactly what they needed immediately.</p>
+            <p><strong>The Problem:</strong> While functional, it felt rigid like a traditional bank interface. It didn't feel personal or social. The heavy use of blue also made the text harder to scan quickly.</p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option1_ufcmkf.png" }]} grid={1} />
+          
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 2:</strong> We tried a "Super App" approach. We introduced a tabbed interface ("People," "Bills," "Business") and a prominent "Fund your wallet" section.</p>
+            <p style={{marginBottom: "4px"}}><strong>The Logic:</strong> We wanted to show users everything Byte could do upfront.</p>
+            <p><strong>The Problem:</strong> This introduced too much cognitive load. The "Fund your wallet" section dominated the screen, distracting users from the primary goal of sending money. It felt cluttered and overwhelming for a user who just wanted to pay a friend quickly.</p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option2_dobbfz.png" }]} grid={1} />
+          
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 3:</strong> Anchored payments directly on the home screen, making send and request actions immediately visible. Users could select a recipient, enter an amount, choose a payment plan, and confirm in a single, linear flow.</p>
+            <p style={{marginBottom: "4px"}}><strong>People-First Design:</strong> Instead of a list of transaction types, we highlighted the people involved. The "Recent Activity" feed mimics a chat app, making the app feel alive and social.</p>
+            <p style={{marginBottom: "4px"}}><strong>Clear Hierarchy:</strong> We simplified the home screen to focus on the three things that matter most: The Balance, The "Send" button, and The "Request" button.</p>
+            <p><strong>Contextual Confidence:</strong> In the transfer flow (3rd screen), we show the sender and receiver avatars side-by-side ("You" ↔ "Adriano"). This visual confirmation builds trust, reassuring the user they are paying the right person before they confirm the transaction.</p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option3_ru7tg4.png" }]} grid={1} />
+          
+          <div className="group">
+            <p>We chose Option 3 because it minimised cognitive load, reduced time to complete a transfer, and aligned with how users already think about money movement. This decision directly influenced the recipient search, amount input, and payment confirmation screens you see here, resulting in a faster, more confident peer-to-peer payment experience.</p>
+          </div>
+
           <div className="group">
             <h3>Final Design Final Design </h3>
             <p>Creating a high-fidelity version of our wireframes allowed me to identify and resolve technical issues that weren&apos;t apparent in the initial stages. This approach ensured a more polished and practical final design for Byte&apos;s payment.</p>
@@ -169,7 +270,7 @@ const Receive = () => {
 
           <ImageGrid images={wireframes} grid={4} />
 
-          <div className="group">
+          <div className="group" id="metrics">
             <h3>Metrics</h3>
             <p>Byte launched in December 2021 and quickly made a significant impact. Within just three months, Byte partnered with a major bank in Nigeria, processing over $10,000 in payments and attracting more than 600 waitlist sign-ups. User feedback from our initial three months was invaluable.</p>
             <p>After one year, Byte had processed over $500,000 in payments and expanded our team to six employees. By 2023, Byte was processing $1 million monthly, scaling towards $3 million. Inspired by our rapid growth and success, we embarked on Byte 2.0 to deliver even more innovative and user-friendly solutions.</p>

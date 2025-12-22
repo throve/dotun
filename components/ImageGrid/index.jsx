@@ -5,9 +5,9 @@ const ImageGrid = ({images, grid}) => {
     <div className="image-cont" style={{display: "grid",gridTemplateColumns: `repeat(${grid}, 1fr)`}} >
     {
       images.map(image => (
-      <div key={image.name} className="img-div">
+      <div key={image.name || image.url} className="img-div">
         <img src={image.url} alt="" />
-        <span>{image.name}</span>
+        {image.name && <span>{image.name}</span>}
       </div>
 
       ))
