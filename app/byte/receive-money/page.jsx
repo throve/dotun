@@ -1,8 +1,49 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
 import { Navbar, ImageGrid, Footer } from '@/components'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Receive = () => {
+  const [activeTab, setActiveTab] = useState('introduction')
+  const router = useRouter()
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const navbarHeight = 80 // Approximate navbar height
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+      setActiveTab(sectionId)
+    }
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['introduction', 'key-decisions', 'metrics']
+      const scrollPosition = window.scrollY + 100
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i])
+        if (section) {
+          const sectionTop = section.offsetTop
+          if (scrollPosition >= sectionTop) {
+            setActiveTab(sections[i])
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const images = [
     {
@@ -66,6 +107,33 @@ const Receive = () => {
     <div className='case-study' >
       <div className="container">
         <Navbar color={"white"} />
+        
+        <div className="receive-money-navbar">
+          <div className="receive-nav-logo" onClick={() => router.push('/')} style={{cursor: 'pointer'}}>Adedotun Ayodimeji <img src="/emoji-w.svg" alt="" /></div>
+          <div className="receive-nav-tabs">
+            <button 
+              className={activeTab === 'introduction' ? 'active' : ''}
+              onClick={() => scrollToSection('introduction')}
+            >
+              Introduction
+            </button>
+            <button 
+              className={activeTab === 'key-decisions' ? 'active' : ''}
+              onClick={() => scrollToSection('key-decisions')}
+            >
+              Key decisions
+            </button>
+            <button 
+              className={activeTab === 'metrics' ? 'active' : ''}
+              onClick={() => scrollToSection('metrics')}
+            >
+              Metrics
+            </button>
+          </div>
+          <a href="/cv-dotun.pdf" target='_blank' download={true}>
+            <button className="receive-cv-button">Download CV</button>
+          </a>
+        </div>
 
         <h1 className='case-h1'  >Connecting everyone through payment Byte allow users to pay and receive money with phone number and tag.</h1>
         <ImageGrid images={images} grid={4} />
@@ -102,7 +170,7 @@ const Receive = () => {
         </div>
         
         <div className="case-info">
-          <div className="group">
+          <div className="group" id="introduction">
 
             <h3>Introduction</h3>
             <p>Mobile payments in Nigeria have grown fast, but using them has not always felt simple. During lockdown, more people relied on their phones to send and receive money, often for the first time. Many of the existing apps were hard to understand, slow, or built for experts rather than everyday users.</p>
@@ -144,11 +212,6 @@ const Receive = () => {
           </div>
 
           <div className="group">
-            <h3>Ideation</h3>
-            <p>Right from the beginning and brainstorming stage for byte, we wanted a platform that makes payment more fun while maintaining its speed and reliability. One of the ways is to do  without traditional bank account and bank name type of payment. Paying users , friends , family with Phone Number and Email will be more fun. With that, we ticked our  second box. Since payment is all done with mobile number or email or byte tag, we have successfully bypass the Nigeria Inter-Bank settlement system for our peer payment which is mostly the cause of down payment because of its poor infrastructure.</p>
-          </div>
-
-          <div className="group">
             <h3>Competitive Advantage </h3>
             <p>We know Byte is not the only startup in Nigeria trying to tackle the down time payment issues during this time and for us to construct a concise and solid foundation for Byte, We had to see what and who are the competitors. As at the time of this report, We only have few startups tackling same issues which are Abeg and Barter. We evaluated several features deemed vital from user surveys and identified which ones byte could capitalise on to have a leg up over other applications.</p>
           </div>
@@ -168,6 +231,38 @@ const Receive = () => {
 
           <ImageGrid images={[{ name: "", url: "/byte-wireframes.webp" }]} grid={1} />
           
+          <div className="group" id="key-decisions">
+            <h3>Key decisions</h3>
+            <h4>Designing the Transfer Flow</h4>
+            <p>We knew that for Byte to succeed, the core action—moving money—had to be effortless. We explored three distinct interface directions to find the balance between speed, clarity, and trust.</p>
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 1:</strong> Our first exploration focused purely on utility. We used a heavy blue background and a linear list of actions ("Send Money," "Request Money," "Pay Bills").</p>
+            <p style={{marginBottom: "4px"}}><strong>The Logic:</strong> We thought a clear list would help users find exactly what they needed immediately.</p>
+            <p><strong>The Problem:</strong> While functional, it felt rigid like a traditional bank interface. It didn't feel personal or social. The heavy use of blue also made the text harder to scan quickly.</p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option1_ufcmkf.png" }]} grid={1} />
+          
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 2:</strong> We tried a "Super App" approach. We introduced a tabbed interface ("People," "Bills," "Business") and a prominent "Fund your wallet" section.</p>
+            <p style={{marginBottom: "4px"}}><strong>The Logic:</strong> We wanted to show users everything Byte could do upfront.</p>
+            <p><strong>The Problem:</strong> This introduced too much cognitive load. The "Fund your wallet" section dominated the screen, distracting users from the primary goal of sending money. It felt cluttered and overwhelming for a user who just wanted to pay a friend quickly.</p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option2_dobbfz.png" }]} grid={1} />
+          
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 3:</strong> Anchored payments directly on the home screen, making send and request actions immediately visible. Users could select a recipient, enter an amount, choose a payment plan, and confirm in a single, linear flow.</p>
+            <p style={{marginBottom: "4px"}}><strong>People-First Design:</strong> Instead of a list of transaction types, we highlighted the people involved. The "Recent Activity" feed mimics a chat app, making the app feel alive and social.</p>
+            <p style={{marginBottom: "4px"}}><strong>Clear Hierarchy:</strong> We simplified the home screen to focus on the three things that matter most: The Balance, The "Send" button, and The "Request" button.</p>
+            <p><strong>Contextual Confidence:</strong> In the transfer flow (3rd screen), we show the sender and receiver avatars side-by-side ("You" ↔ "Adriano"). This visual confirmation builds trust, reassuring the user they are paying the right person before they confirm the transaction.</p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option3_ru7tg4.png" }]} grid={1} />
+          
+          <div className="group">
+            <p>We chose Option 3 because it minimised cognitive load, reduced time to complete a transfer, and aligned with how users already think about money movement. This decision directly influenced the recipient search, amount input, and payment confirmation screens you see here, resulting in a faster, more confident peer-to-peer payment experience.</p>
+          </div>
+
           <div className="group">
             <h3>Final Design Final Design </h3>
             <p>Creating a high-fidelity version of our wireframes allowed me to identify and resolve technical issues that weren&apos;t apparent in the initial stages. This approach ensured a more polished and practical final design for Byte&apos;s payment.</p>
@@ -175,7 +270,7 @@ const Receive = () => {
 
           <ImageGrid images={wireframes} grid={4} />
 
-          <div className="group">
+          <div className="group" id="metrics">
             <h3>Metrics</h3>
             <p>Byte launched in December 2021 and quickly made a significant impact. Within just three months, Byte partnered with a major bank in Nigeria, processing over $10,000 in payments and attracting more than 600 waitlist sign-ups. User feedback from our initial three months was invaluable.</p>
             <p>After one year, Byte had processed over $500,000 in payments and expanded our team to six employees. By 2023, Byte was processing $1 million monthly, scaling towards $3 million. Inspired by our rapid growth and success, we embarked on Byte 2.0 to deliver even more innovative and user-friendly solutions.</p>
