@@ -135,7 +135,7 @@ const Receive = () => {
           </a>
         </div>
 
-        <h1 className='case-h1'  >Connecting everyone through payment Byte allow users to pay and receive money with phone number and tag.</h1>
+        <h1 className='case-h1'  >Byte connects people through simple, reliable payments.</h1>
         <ImageGrid images={images} grid={4} />
         <div className="details">
           <div>
