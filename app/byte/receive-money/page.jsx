@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 
 const Receive = () => {
   const [activeTab, setActiveTab] = useState('introduction')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const router = useRouter()
 
   const scrollToSection = (sectionId) => {
@@ -21,6 +22,7 @@ const Receive = () => {
         behavior: 'smooth'
       })
       setActiveTab(sectionId)
+      setMobileMenuOpen(false) // Close mobile menu after clicking
     }
   }
 
@@ -44,6 +46,23 @@ const Receive = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const navbar = document.querySelector('.receive-money-navbar')
+      if (mobileMenuOpen && navbar && !navbar.contains(event.target)) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [mobileMenuOpen])
 
   const images = [
     {
@@ -130,9 +149,43 @@ const Receive = () => {
               Metrics
             </button>
           </div>
-          <a href="/cv-dotun.pdf" target='_blank' download={true}>
+          <a href="/cv-dotun.pdf" target='_blank' download={true} className="receive-cv-link">
             <button className="receive-cv-button">Download CV</button>
           </a>
+          <button 
+            className={`mobile-menu-toggle ${mobileMenuOpen ? 'open' : ''}`}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          {mobileMenuOpen && (
+            <div className="mobile-menu">
+              <button 
+                className={activeTab === 'introduction' ? 'active' : ''}
+                onClick={() => scrollToSection('introduction')}
+              >
+                Introduction
+              </button>
+              <button 
+                className={activeTab === 'key-decisions' ? 'active' : ''}
+                onClick={() => scrollToSection('key-decisions')}
+              >
+                Key decisions
+              </button>
+              <button 
+                className={activeTab === 'metrics' ? 'active' : ''}
+                onClick={() => scrollToSection('metrics')}
+              >
+                Metrics
+              </button>
+              <a href="/cv-dotun.pdf" target='_blank' download={true}>
+                <button className="receive-cv-button">Download CV</button>
+              </a>
+            </div>
+          )}
         </div>
 
         <h1 className='case-h1'  >Byte connects people through simple, reliable payments.</h1>
