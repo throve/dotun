@@ -235,26 +235,26 @@ const Receive = () => {
             <h3>Key decisions</h3>
             <h4>Designing the Transfer Flow</h4>
             <p>We knew that for Byte to succeed, the core action—moving money—had to be effortless. We explored three distinct interface directions to find the balance between speed, clarity, and trust.</p>
-            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 1:</strong> Our first exploration focused purely on utility. We used a heavy blue background and a linear list of actions ("Send Money," "Request Money," "Pay Bills").</p>
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 1:</strong> Our first exploration focused purely on utility. We used a heavy blue background and a linear list of actions (&quot;Send Money,&quot; &quot;Request Money,&quot; &quot;Pay Bills&quot;).</p>
             <p style={{marginBottom: "4px"}}><strong>The Logic:</strong> We thought a clear list would help users find exactly what they needed immediately.</p>
-            <p><strong>The Problem:</strong> While functional, it felt rigid like a traditional bank interface. It didn't feel personal or social. The heavy use of blue also made the text harder to scan quickly.</p>
+            <p><strong>The Problem:</strong> While functional, it felt rigid like a traditional bank interface. It didn&apos;t feel personal or social. The heavy use of blue also made the text harder to scan quickly.</p>
           </div>
 
           <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option1_ufcmkf.png" }]} grid={1} />
           
           <div className="group">
-            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 2:</strong> We tried a "Super App" approach. We introduced a tabbed interface ("People," "Bills," "Business") and a prominent "Fund your wallet" section.</p>
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 2:</strong> We tried a &quot;Super App&quot; approach. We introduced a tabbed interface (&quot;People,&quot; &quot;Bills,&quot; &quot;Business&quot;) and a prominent &quot;Fund your wallet&quot; section.</p>
             <p style={{marginBottom: "4px"}}><strong>The Logic:</strong> We wanted to show users everything Byte could do upfront.</p>
-            <p><strong>The Problem:</strong> This introduced too much cognitive load. The "Fund your wallet" section dominated the screen, distracting users from the primary goal of sending money. It felt cluttered and overwhelming for a user who just wanted to pay a friend quickly.</p>
+            <p><strong>The Problem:</strong> This introduced too much cognitive load. The &quot;Fund your wallet&quot; section dominated the screen, distracting users from the primary goal of sending money. It felt cluttered and overwhelming for a user who just wanted to pay a friend quickly.</p>
           </div>
 
           <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option2_dobbfz.png" }]} grid={1} />
           
           <div className="group">
             <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 3:</strong> Anchored payments directly on the home screen, making send and request actions immediately visible. Users could select a recipient, enter an amount, choose a payment plan, and confirm in a single, linear flow.</p>
-            <p style={{marginBottom: "4px"}}><strong>People-First Design:</strong> Instead of a list of transaction types, we highlighted the people involved. The "Recent Activity" feed mimics a chat app, making the app feel alive and social.</p>
-            <p style={{marginBottom: "4px"}}><strong>Clear Hierarchy:</strong> We simplified the home screen to focus on the three things that matter most: The Balance, The "Send" button, and The "Request" button.</p>
-            <p><strong>Contextual Confidence:</strong> In the transfer flow (3rd screen), we show the sender and receiver avatars side-by-side ("You" ↔ "Adriano"). This visual confirmation builds trust, reassuring the user they are paying the right person before they confirm the transaction.</p>
+            <p style={{marginBottom: "4px"}}><strong>People-First Design:</strong> Instead of a list of transaction types, we highlighted the people involved. The &quot;Recent Activity&quot; feed mimics a chat app, making the app feel alive and social.</p>
+            <p style={{marginBottom: "4px"}}><strong>Clear Hierarchy:</strong> We simplified the home screen to focus on the three things that matter most: The Balance, The &quot;Send&quot; button, and The &quot;Request&quot; button.</p>
+            <p><strong>Contextual Confidence:</strong> In the transfer flow (3rd screen), we show the sender and receiver avatars side-by-side (&quot;You&quot; ↔ &quot;Adriano&quot;). This visual confirmation builds trust, reassuring the user they are paying the right person before they confirm the transaction.</p>
           </div>
 
           <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766413507/option3_ru7tg4.png" }]} grid={1} />
