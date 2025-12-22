@@ -161,7 +161,7 @@ const Receive = () => {
           </div>
           <div>
           <h4>Status</h4>
-          <p>{projectDetails.status}</p>
+          <p><a href="https://www.usebyte.com/" target="_blank" rel="noopener noreferrer" style={{color: "#FF593B", textDecoration: "none"}}>{projectDetails.status}</a></p>
           </div>
           <div>
           <h4>Year</h4>
