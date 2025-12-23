@@ -286,7 +286,7 @@ const Receive = () => {
           
           <div className="group" id="key-decisions">
             <h3>Key decisions</h3>
-            <h4>Designing the Transfer Flow</h4>
+            <h4>1. Designing the Transfer Flow</h4>
             <p>We knew that for Byte to succeed, the core action—moving money—had to be effortless. We explored three distinct interface directions to find the balance between speed, clarity, and trust.</p>
             <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 1:</strong> Our first exploration focused purely on utility. We used a heavy blue background and a linear list of actions (&quot;Send Money,&quot; &quot;Request Money,&quot; &quot;Pay Bills&quot;).</p>
             <p style={{marginBottom: "4px"}}><strong>The Logic:</strong> We thought a clear list would help users find exactly what they needed immediately.</p>
@@ -314,6 +314,42 @@ const Receive = () => {
           
           <div className="group">
             <p>We chose Option 3 because it minimised cognitive load, reduced time to complete a transfer, and aligned with how users already think about money movement. This decision directly influenced the recipient search, amount input, and payment confirmation screens you see here, resulting in a faster, more confident peer-to-peer payment experience.</p>
+          </div>
+
+          <div className="group">
+            <h4>2. Designing the navigation system</h4>
+            <p>The navigation bar is the main way people move around a mobile app. For Byte, it was especially important because users often open the app to do one thing quickly, send or receive money. Our challenge was to make key actions easy to reach while keeping the app calm, clear, and trustworthy.</p>
+            <p>We explored three different navigation options before deciding on the final approach.</p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766507728/menu_ckzmow.png" }]} grid={1} />
+
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 1:</strong> This option used a five tab bottom navigation with clear icons, short labels, and the Byte logo placed at the centre.</p>
+            <p style={{marginBottom: "4px"}}><strong>Brand presence:</strong> Placing the Byte logo in the middle helped reinforce the brand every time users opened the app. It gave Byte a clear identity without getting in the way of everyday tasks and also serve as a pay quick action button.</p>
+            <p><strong>Clear feedback:</strong> Active tabs were highlighted in blue, so users could always tell where they were. This reduced confusion and made it easier to move between screens without thinking too much. The most common actions, Home, Wallet, and Activity, were all within easy thumb reach. This mattered because many users use the app on the go or in busy environments.</p>
+          </div>
+
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 2:</strong> This version added a dedicated Payments tab to the navigation.</p>
+            <p style={{marginBottom: "4px"}}><strong>The idea:</strong> We wanted to make payments feel like the main action and encourage users to send money more often.</p>
+            <p><strong>Clear feedback:</strong> Testing showed that users were confused by having both Payments and Wallet in the navigation. People were not sure where to go to check their balance versus sending money. The extra tab made the navigation feel busy and less clear.</p>
+          </div>
+
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 3:</strong> This option reduced the navigation to three items and placed extra features inside a menu.</p>
+            <p style={{marginBottom: "4px"}}><strong>The idea:</strong> We aimed for a cleaner, more premium look that focused strongly on the Byte name and visual style.</p>
+            <p><strong>Clear feedback:</strong> Although it looked good, it slowed users down. Important screens like Wallet and Activity were hidden behind a menu. For a payment app, especially during quick or stressful moments like paying at a checkout, this created unnecessary steps and frustration.</p>
+          </div>
+
+          <div className="group">
+            <h4>Why we choose option 1</h4>
+            <p>Option 1 struck the right balance. It felt modern and friendly, while still being practical. Users could reach their money and transaction history instantly, and the app remained easy to understand even for first time users. It supported fast actions without making the app feel cold or complicated.</p>
+          </div>
+
+          <div className="group">
+            <h4>Results and impact</h4>
+            <p>After settling on Option 1, we saw clear improvements in how people used the app. Users completed payments faster because key actions were always visible and easy to reach. Fewer people got lost or switched between tabs unnecessarily. Support requests related to navigation dropped, which suggested better understanding and confidence. Overall, the clearer structure helped build trust by making the app feel predictable, reliable, and easy to use when it mattered most.</p>
           </div>
 
           <div className="group">
