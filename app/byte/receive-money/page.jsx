@@ -348,7 +348,7 @@ const Receive = () => {
           </div>
 
           <div className="group">
-            <h4>Results and impact</h4>
+            <h4>Results and Impact</h4>
             <p>After settling on Option 1, we saw clear improvements in how people used the app. Users completed payments faster because key actions were always visible and easy to reach. Fewer people got lost or switched between tabs unnecessarily. Support requests related to navigation dropped, which suggested better understanding and confidence. Overall, the clearer structure helped build trust by making the app feel predictable, reliable, and easy to use when it mattered most.</p>
           </div>
 
