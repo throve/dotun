@@ -353,6 +353,40 @@ const Receive = () => {
           </div>
 
           <div className="group">
+            <h4>3. Designing for trust in the contact list</h4>
+            <p>In a payment app, the scariest moment is hitting &quot;Send.&quot; Did I type the name right? Is this the right &quot;Emmanuel&quot;? To solve this anxiety, we needed the contact list to offer immediate visual confirmation.</p>
+            <p>We debated three ways to handle user profiles, balancing social trust against app performance.</p>
+            <p><strong>The Options we explored:</strong></p>
+          </div>
+
+          <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766742381/Contact_screen_csg39w.png" }]} grid={1} />
+
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 1:</strong> This was the safe bet. We would show photos only for &quot;Saved Beneficiaries&quot; (people you pay often) and use simple initials for everyone else.</p>
+            <p><strong>Why we scrapped it:</strong> It felt inconsistent. The list looked messy, and it didn&apos;t solve the trust problem for new or one-off payments—which is exactly when you need visual confirmation the most.</p>
+          </div>
+
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 3:</strong> We explored using fun, generated avatars for users without photos.</p>
+            <p><strong>Why we scrapped it:</strong> While it looked consistent, it failed the &quot;trust test.&quot; If I am sending 50,000 Naira to a mechanic, a cartoon avatar doesn&apos;t tell me I have the right person. It felt too playful for a financial transaction.</p>
+          </div>
+
+          <div className="group">
+            <p style={{marginBottom: "4px"}}><strong style={{color: "#FF593B"}}>Option 2: The Winner</strong> We decided to pull profile photos for every single Byte user in your contact list.</p>
+            <p><strong>Why it won:</strong> It instantly made the app feel social, like WhatsApp or Instagram. More importantly, seeing a real face eliminates the fear of sending money to the wrong person.</p>
+          </div>
+
+          <div className="group">
+            <h4>The Technical Challenge: Handling the &quot;Heavy Lift&quot;</h4>
+            <p>Choosing Option 2 wasn&apos;t easy from an engineering standpoint. Loading high-resolution images for a user&apos;s entire phonebook is data-heavy and can slow down the app—especially on older Android devices common in our market.</p>
+            <p>To make this design work without killing performance, we had to solve a few backend puzzles:</p>
+            <p><strong>Lazy Loading:</strong> We ensured images only downloaded as the user scrolled, rather than all at once.</p>
+            <p><strong>Aggressive Caching:</strong> Once a contact&apos;s photo is loaded, it caches locally so it doesn&apos;t need to be fetched again unless they update their profile.</p>
+            <p><strong>Thumbnail Compression:</strong> We created a pipeline to serve smaller, compressed thumbnails for the list view, only loading the full-res version if you tapped into their profile.</p>
+            <p>By solving these technical constraints, we were able to keep the experience fast while delivering the high-trust visual experience users needed.</p>
+          </div>
+
+          <div className="group">
             <h3>Final Design Final Design </h3>
             <p>Creating a high-fidelity version of our wireframes allowed me to identify and resolve technical issues that weren&apos;t apparent in the initial stages. This approach ensured a more polished and practical final design for Byte&apos;s payment.</p>
           </div>
