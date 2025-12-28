@@ -1557,10 +1557,81 @@ p{
 }
 
 // Add margin to content after fixed navbar on receive-money page
-.case-study .container .receive-money-navbar + .case-h1 {
+.case-study .container .receive-money-navbar + .receive-hero {
   margin-top: 100px;
 
   @media (min-width: 768px) {
     margin-top: 120px;
+  }
+}
+
+// Receive Money Hero Section
+.receive-hero {
+  width: 100%;
+  margin-bottom: 60px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 90px;
+  }
+
+  .case-h1 {
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .receive-hero-body {
+    color: #A4A4A4;
+    font-size: 16px;
+    line-height: 179%;
+    margin-bottom: 24px;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .receive-hero-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    color: #FF593B;
+    font-size: 14px;
+    font-weight: 500;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .separator {
+      color: #A4A4A4;
+      margin: 0 4px;
+
+      @media (min-width: 768px) {
+        margin: 0 8px;
+      }
+    }
+  }
+
+  .receive-hero-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+
+    .image-cont {
+      margin-bottom: 0;
+    }
   }
 }

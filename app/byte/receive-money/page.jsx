@@ -188,8 +188,22 @@ const Receive = () => {
           )}
         </div>
 
-        <h1 className='case-h1'  >Byte connects people through simple, reliable payments.</h1>
-        <ImageGrid images={images} grid={4} />
+        <div className="receive-hero">
+          <h1 className='case-h1'>Scaling peer-to-peer payments to $1M monthly As Founding UX Designer</h1>
+          <p className="receive-hero-body">We built Byte to connect people through simple, reliable payments, solving the banking downtime crisis in Nigeria.</p>
+          <div className="receive-hero-metrics">
+            <span>🚀 $1M+ Monthly Volume</span>
+            <span className="separator">|</span>
+            <span>🏦 Major Bank Partnership</span>
+            <span className="separator">|</span>
+            <span>📈 0 to 1 Product Launch</span>
+          </div>
+          <div className="receive-hero-images">
+            <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766938258/byte1_p0krdw.webp" }]} grid={1} />
+            <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766938258/byte2_nie9fi.webp" }]} grid={1} />
+            <ImageGrid images={[{ name: "", url: "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1766938259/byte3_ldv3ow.webp" }]} grid={1} />
+          </div>
+        </div>
         <div className="details">
           <div>
             <h4>Contribution</h4>
