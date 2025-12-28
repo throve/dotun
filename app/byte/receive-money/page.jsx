@@ -401,8 +401,8 @@ const Receive = () => {
           </div>
 
           <div className="group">
-            <h3>Final Design Final Design </h3>
-            <p>Creating a high-fidelity version of our wireframes allowed me to identify and resolve technical issues that weren&apos;t apparent in the initial stages. This approach ensured a more polished and practical final design for Byte&apos;s payment.</p>
+            <h3>High-Fidelity</h3>
+            <p>Creating a high-fidelity version of our wireframes allowed me to identify and resolve technical issues that weren&apos;t apparent in the initial stages. This approach ensured a more polished and practical high-fidelity design for Byte&apos;s payment.</p>
           </div>
 
           <ImageGrid images={wireframes} grid={4} />

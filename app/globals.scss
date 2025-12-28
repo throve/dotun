@@ -1635,3 +1635,56 @@ p{
     }
   }
 }
+
+// Add Money Hero Section
+.case-study .container .receive-money-navbar + .add-money-hero {
+  margin-top: 100px;
+
+  @media (min-width: 768px) {
+    margin-top: 120px;
+  }
+}
+
+.add-money-hero {
+  width: 100%;
+  margin-bottom: 32px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 48px;
+  }
+
+  .case-h1 {
+    margin-bottom: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (min-width: 768px) {
+      margin-bottom: 24px;
+      white-space: normal;
+    }
+  }
+
+  .add-money-hero-body {
+    color: #A4A4A4;
+    font-size: 16px;
+    line-height: 179%;
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .add-money-hero-note {
+    color: #FF593B;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}

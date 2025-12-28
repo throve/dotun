@@ -135,7 +135,7 @@ const CornershopMobileStamps = () => {
           </div>
 
           <div className="group">
-            <h3>Final Design</h3>
+            <h3>High-Fidelity</h3>
             <p>The app has two main parts:</p>
             <ul>
               <li><strong>Home screen</strong>

@@ -122,8 +122,8 @@ const Receive = () => {
 
           
           <div className="group">
-            <h3>Final Design Final Design </h3>
-            <p>The final design of the ZapMedX web application combines user-friendly interfaces with intuitive navigation to transform how Nigerians access healthcare services online. As a UI designer on this project, my goal was to create a seamless and engaging user experience across all features. Here are a few key designs showcased.</p>
+            <h3>High-Fidelity</h3>
+            <p>The high-fidelity design of the ZapMedX web application combines user-friendly interfaces with intuitive navigation to transform how Nigerians access healthcare services online. As a UI designer on this project, my goal was to create a seamless and engaging user experience across all features. Here are a few key designs showcased.</p>
           </div>
 
           <div className='special-img-cont' >

@@ -21,7 +21,7 @@ export const fintech = {
                 {
                     title: "Add money on Byte",
                     caseStudyUrl: "/byte/add-money",
-                    header: "Add money or pay with your connected bank or card.",
+                    header: "Add money or pay with your connected bank or card",
                     images: [
                         "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765892698/p2_img1_pamkxx.webp",
                         "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1765892698/p2_img2_zxgzcz.webp",

@@ -152,8 +152,8 @@ const Receive = () => {
 
           
           <div className="group">
-            <h3>Final Design Final Design </h3>
-            <p>The final design of the Smart Care Mobile App brings our vision to life with a sleek, intuitive interface that priorities user experience. By incorporating user feedback and extensive testing, we ensured that the app is both functional and aesthetically pleasing. Key features like personalised care plans, real-time health monitoring, and seamless communication tools are designed to be easily accessible and user-friendly.</p>
+            <h3>High-Fidelity</h3>
+            <p>The high-fidelity design of the Smart Care Mobile App brings our vision to life with a sleek, intuitive interface that priorities user experience. By incorporating user feedback and extensive testing, we ensured that the app is both functional and aesthetically pleasing. Key features like personalised care plans, real-time health monitoring, and seamless communication tools are designed to be easily accessible and user-friendly.</p>
           </div>
 
           <ImageGrid images={wireframes} grid={4} />
