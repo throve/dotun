@@ -149,7 +149,7 @@ const Receive = () => {
               Metrics
             </button>
           </div>
-          <a href="/cv-dotun.pdf" target='_blank' download={true} className="receive-cv-link">
+          <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" className="receive-cv-link">
             <button className="receive-cv-button">Download CV</button>
           </a>
           <button 
@@ -181,7 +181,7 @@ const Receive = () => {
               >
                 Metrics
               </button>
-              <a href="/cv-dotun.pdf" target='_blank' download={true}>
+              <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf">
                 <button className="receive-cv-button">Download CV</button>
               </a>
             </div>
