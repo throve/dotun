@@ -376,16 +376,18 @@ p{
   .hero-intro {
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     line-height: 147%;
     color: #0E0E0E;
     max-width: 100%;
     margin: 0;
+    white-space: pre-line;
 
     @media (min-width: 768px) {
       font-size: 36px;
       max-width: 694px;
+      font-weight: 500;
     }
 
     .hero-location {
@@ -424,7 +426,7 @@ p{
   color: #fff;
   background-color: #000;
   border-radius: 8px;
-  padding: 16px 6px;
+  padding: 16px 18px;
   
   @media (min-width: 768px){
     background-color: #2C2C2C;
