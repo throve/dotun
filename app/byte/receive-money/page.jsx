@@ -126,7 +126,7 @@ const Receive = () => {
     <div className='case-study' >
       <div className="container">
         <Navbar color={"white"} />
-        
+
         <div className="receive-money-navbar">
           <div className="receive-nav-logo" onClick={() => router.push('/')} style={{cursor: 'pointer'}}>Adedotun Ayodimeji <img src="/emoji-w.svg" alt="" /></div>
           <div className="receive-nav-tabs">
