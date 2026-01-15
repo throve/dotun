@@ -13,7 +13,7 @@ const Medtech = () => {
     <div className="industry" >
         <div className="industry-tag" style={{backgroundColor: data.color}} >
             <img src={data.icon} alt="" />
-            <p>MedTech</p>
+            <p>Health</p>
         </div>
 
         <div className="companies">

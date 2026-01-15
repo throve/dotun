@@ -11,13 +11,19 @@ const Fintech = () => {
         console.log(data)
     }, [])
    return ( 
-    <div className="industry" >
-        <div className="industry-tag" style={{backgroundColor: data.color}} >
-            <img src={data.icon} alt="" />
-            <p>FinTech</p>
-        </div>
+    <div className="fintech-wrapper">
+        <section className="live-apps">
+          <h2 className="live-apps-title">My work</h2>
+          <p className="live-apps-subtitle">These are projects I'm allowed to share publicly</p>
+        </section>
 
-        <div className="companies">
+        <div className="industry" >
+            <div className="industry-tag" style={{backgroundColor: data.color}} >
+                <img src={data.icon} alt="" />
+                <p>FinTech</p>
+            </div>
+
+            <div className="companies">
             {
                 data.startups.map(startup => (
                     <div className="company" key={startup.name} >
@@ -110,8 +116,8 @@ const Fintech = () => {
                     </div>
                 ))
             }
+            </div>
         </div>
-        
     </div>
    )
 }

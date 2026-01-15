@@ -13,7 +13,7 @@ const Navbar = ({color}) => {
   return (
     <div className={`navbar ${inter.className}`} >
         <div className="logo desk" onClick={() => linkTo('/')}  style={{color: color}} >Adedotun Ayodimeji <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
-        <div className="logo mob"  onClick={() => linkTo('/')}  >AY <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
+        <div className="logo mob" onClick={() => linkTo('/')} style={{color: color}} >AY <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
         {/* <h1 style={{color: "#fff"}} >{color}</h1> */}
         <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" >
 
