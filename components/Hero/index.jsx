@@ -14,7 +14,7 @@ const Hero = () => {
               <div className="app-card">
                 <img src="/new/sayitlaterlogo.png" alt="SayItLater" className="app-logo" />
               </div>
-              <h3 className="app-description">SayItLater: IOS app to write thoughts you're not ready to say out loud</h3>
+              <h3 className="app-description">SayItLater: IOS app to write thoughts you&apos;re not ready to say out loud</h3>
               <a href="https://apps.apple.com/gb/app/sayitlater/id6757601308" target="_blank" rel="noopener noreferrer" className="app-cta">Download on app store</a>
             </div>
             

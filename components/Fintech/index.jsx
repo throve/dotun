@@ -14,7 +14,7 @@ const Fintech = () => {
     <div className="fintech-wrapper">
         <section className="live-apps">
           <h2 className="live-apps-title">My work</h2>
-          <p className="live-apps-subtitle">These are projects I'm allowed to share publicly</p>
+          <p className="live-apps-subtitle">These are projects I&apos;m allowed to share publicly</p>
         </section>
 
         <div className="industry" >
