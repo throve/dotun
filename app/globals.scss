@@ -1604,7 +1604,7 @@ p{
   .receive-nav-tabs {
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1025px) {
       display: flex;
       gap: 24px;
       align-items: center;
@@ -1645,7 +1645,7 @@ p{
   .receive-cv-link {
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1025px) {
       display: block;
     }
   }
@@ -1681,7 +1681,7 @@ p{
     padding: 0;
     z-index: 1001;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1025px) {
       display: none;
     }
 
@@ -1735,7 +1735,7 @@ p{
     gap: 16px;
     z-index: 1000;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1025px) {
       display: none;
     }
 
