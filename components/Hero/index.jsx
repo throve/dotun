@@ -8,6 +8,30 @@ const Hero = () => {
   const typingTextRef2 = useRef(null)
   const animationStartedRef = useRef(false)
 
+  // Function to play typing sound
+  const playTypingSound = () => {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)()
+      const oscillator = audioContext.createOscillator()
+      const gainNode = audioContext.createGain()
+
+      oscillator.connect(gainNode)
+      gainNode.connect(audioContext.destination)
+
+      oscillator.frequency.value = 800 + Math.random() * 200 // Random frequency between 800-1000Hz
+      oscillator.type = 'sine'
+
+      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime)
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05)
+
+      oscillator.start(audioContext.currentTime)
+      oscillator.stop(audioContext.currentTime + 0.05)
+    } catch (error) {
+      // Silently fail if audio context is not available
+      console.log('Audio not available')
+    }
+  }
+
   useEffect(() => {
     // Prevent animation from running multiple times (React StrictMode)
     if (animationStartedRef.current) return
@@ -36,6 +60,9 @@ const Hero = () => {
       tl.call(() => {
         currentText += char
         typingElement.innerHTML = currentText + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+        if (char !== ' ') {
+          playTypingSound()
+        }
       })
       tl.to({}, { duration: delay })
     })
@@ -48,6 +75,9 @@ const Hero = () => {
         currentText2 += char
         typingElement.innerHTML = currentText
         typingElement2.innerHTML = currentText2 + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+        if (char !== ' ') {
+          playTypingSound()
+        }
       })
       tl.to({}, { duration: delay })
     })
