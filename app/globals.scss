@@ -62,6 +62,11 @@ p, li{
     padding-top: 50px;
     color: rgba(255, 255, 255, 1);
 
+    @media (min-width: 768px) and (max-width: 1024px){
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+
     @media (min-width: 768px){
       padding: 0;
       padding-top: 60px;
@@ -105,6 +110,11 @@ p, li{
     background-color: #000;
     color: #fff;
     position: relative;
+
+    @media (min-width: 768px) and (max-width: 1024px){
+      margin-left: 24px;
+      margin-right: 24px;
+    }
 
     .navbar {
       display: none;
@@ -345,6 +355,12 @@ p, li{
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0;
+
+  @media (min-width: 768px) and (max-width: 1024px){
+    margin-left: 24px;
+    margin-right: 24px;
+    width: calc(100% - 48px);
+  }
 
   @media (min-width: 768px){
     padding: 12px 50px;
@@ -1542,6 +1558,12 @@ p{
   border-bottom: 1px solid #333;
   width: 100%;
   box-sizing: border-box;
+
+  @media (min-width: 768px) and (max-width: 1024px){
+    margin-left: 24px;
+    margin-right: 24px;
+    width: calc(100% - 48px);
+  }
 
   @media (min-width: 768px) {
     padding: 12px 50px;
