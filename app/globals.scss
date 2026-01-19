@@ -83,6 +83,7 @@ p, li{
   background-color: #000;
   min-height: 100vh;
   height: 100%;
+  padding-top: 0;
   
   .container{
     width: 100%;
@@ -91,6 +92,7 @@ p, li{
     padding: 16px 20px 70px;
     background-color: #000;
     color: #fff;
+    position: relative;
 
     .navbar {
       display: none;
@@ -1721,10 +1723,27 @@ p{
 
 // Add margin to content after fixed navbar on receive-money page
 .case-study .container .receive-money-navbar + .receive-hero {
-  margin-top: 64px;
+  margin-top: 80px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: -20px;
+    right: -20px;
+    height: 16px;
+    background-color: #000;
+    z-index: -1;
+
+    @media (min-width: 768px) {
+      left: -50px;
+      right: -50px;
+    }
+  }
 
   @media (min-width: 768px) {
-    margin-top: 72px;
+    margin-top: 88px;
   }
 }
 
@@ -1801,10 +1820,27 @@ p{
 
 // Add Money Hero Section
 .case-study .container .receive-money-navbar + .add-money-hero {
-  margin-top: 64px;
+  margin-top: 80px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: -20px;
+    right: -20px;
+    height: 16px;
+    background-color: #000;
+    z-index: -1;
+
+    @media (min-width: 768px) {
+      left: -50px;
+      right: -50px;
+    }
+  }
 
   @media (min-width: 768px) {
-    margin-top: 72px;
+    margin-top: 88px;
   }
 }
 
