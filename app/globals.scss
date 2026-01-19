@@ -89,10 +89,17 @@ p, li{
     max-width: 880px;
     margin: 0 auto;
     padding: 0 20px 70px;
+    padding-top: 0;
     color: #fff;
 
     .navbar {
       display: none;
+    }
+
+    .navbar + h1,
+    .navbar + .case-h1,
+    h1.case-h1:first-child {
+      margin-top: 0;
     }
 
     h1{
