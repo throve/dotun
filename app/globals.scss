@@ -88,8 +88,7 @@ p, li{
     width: 100%;
     max-width: 880px;
     margin: 0 auto;
-    padding: 0 20px 70px;
-    padding-top: 0;
+    padding: 16px 20px 70px;
     color: #fff;
 
     .navbar {
@@ -97,10 +96,11 @@ p, li{
     }
 
     /* Add consistent spacing between hidden navbar and first heading */
+    /* Ensure a consistent gap between the navbar (hidden) and the first heading */
     .navbar + h1,
     .navbar + .case-h1,
     h1.case-h1:first-child {
-      margin-top: 16px;
+      margin-top: 0;
     }
 
     h1{
@@ -1720,10 +1720,10 @@ p{
 
 // Add margin to content after fixed navbar on receive-money page
 .case-study .container .receive-money-navbar + .receive-hero {
-  margin-top: 50px;
+  margin-top: 64px;
 
   @media (min-width: 768px) {
-    margin-top: 60px;
+    margin-top: 72px;
   }
 }
 
@@ -1800,10 +1800,10 @@ p{
 
 // Add Money Hero Section
 .case-study .container .receive-money-navbar + .add-money-hero {
-  margin-top: 50px;
+  margin-top: 64px;
 
   @media (min-width: 768px) {
-    margin-top: 60px;
+    margin-top: 72px;
   }
 }
 
