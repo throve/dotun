@@ -32,29 +32,36 @@ const Hero = () => {
     // Create timeline for typing animation
     const tl = gsap.timeline({ delay: 0.5 })
 
-    // Type first part (gray)
+    // Type first part (gray) with cursor
     textPart1.split('').forEach((char) => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
       tl.call(() => {
         currentText += char
-        typingElement.textContent = currentText
+        typingElement.innerHTML = currentText + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
       })
       tl.to({}, { duration: delay })
     })
 
-    // Type second part (black) - this will go to a new line
+    // Move cursor to second line and type second part (black)
     textPart2.split('').forEach((char) => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
       tl.call(() => {
         currentText2 += char
-        typingElement2.textContent = currentText2
+        typingElement2.innerHTML = currentText2 + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
       })
       tl.to({}, { duration: delay })
     })
 
-    // After typing is complete, make cursor blink continuously
+    // After typing is complete, remove inline cursor and use the ref cursor with blink animation
+    tl.call(() => {
+      typingElement.innerHTML = currentText
+      typingElement2.innerHTML = currentText2
+      cursorElement.style.opacity = '1'
+    })
+    
+    // Make cursor blink continuously
     tl.to(cursorElement, {
       opacity: 0,
       duration: 0.6,
