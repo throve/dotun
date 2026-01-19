@@ -96,10 +96,11 @@ p, li{
       display: none;
     }
 
+    /* Add consistent spacing between hidden navbar and first heading */
     .navbar + h1,
     .navbar + .case-h1,
     h1.case-h1:first-child {
-      margin-top: 0;
+      margin-top: 16px;
     }
 
     h1{
