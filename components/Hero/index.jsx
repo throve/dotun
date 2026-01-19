@@ -14,7 +14,7 @@ const Hero = () => {
     animationStartedRef.current = true
 
     const textPart1 = "I'm a Product Designer in London, "
-    const textPart2 = "designing experiences at TELUS Health."
+    const textPart2 = "Designing experiences at TELUS Health."
     const typingElement = typingTextRef.current
     const cursorElement = cursorRef.current
 
