@@ -460,14 +460,17 @@ p{
     .hero-location {
       color: #676666;
       display: inline-block;
+      white-space: nowrap;
     }
 
     .hero-location-text {
       color: #676666;
+      white-space: nowrap;
     }
 
     .hero-location-black {
       color: #000;
+      white-space: nowrap;
     }
 
     .typing-cursor {
@@ -475,6 +478,7 @@ p{
       color: #676666;
       font-weight: 400;
       margin-left: 2px;
+      white-space: nowrap;
       animation: blink 1s infinite;
     }
 

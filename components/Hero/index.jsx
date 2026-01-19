@@ -73,8 +73,8 @@ const Hero = () => {
     <div className="hero" >
         <p className="hero-intro">
           My name is Adedotun Ayodimeji, or AY.<br /> 
-          <span className="hero-location">
-            <span ref={typingTextRef}></span>
+          <span className="hero-location" style={{ whiteSpace: 'nowrap' }}>
+            <span ref={typingTextRef} style={{ whiteSpace: 'nowrap' }}></span>
             <span ref={cursorRef} className="typing-cursor">|</span>
           </span>
         </p>
