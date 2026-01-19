@@ -32,18 +32,18 @@ const Hero = () => {
     // Create timeline for typing animation
     const tl = gsap.timeline({ delay: 0.5 })
 
-    // Type first part (gray) with cursor
+    // Type first part (gray) without cursor
     textPart1.split('').forEach((char) => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
       tl.call(() => {
         currentText += char
-        typingElement.innerHTML = currentText + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+        typingElement.textContent = currentText
       })
       tl.to({}, { duration: delay })
     })
 
-    // Move cursor to second line and type second part (black)
+    // Move cursor to second line and type second part (black) with cursor
     textPart2.split('').forEach((char) => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
