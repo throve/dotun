@@ -83,6 +83,18 @@ p, li{
   background-color: #000;
   min-height: 100vh;
   height: 100%;
+  position: relative;
+  /* Ensure the area behind the fixed navbar and gap is black */
+  &::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background-color: #000;
+    z-index: 0;
+  }
   padding-top: 0;
   
   .container{
