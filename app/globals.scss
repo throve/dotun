@@ -91,6 +91,10 @@ p, li{
     padding: 0 20px 70px;
     color: #fff;
 
+    .navbar {
+      display: none;
+    }
+
     h1{
       margin-bottom: 48px;
     }
@@ -1504,13 +1508,13 @@ p{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
+  padding: 8px 20px;
   border-bottom: 1px solid #333;
   width: 100%;
   box-sizing: border-box;
 
   @media (min-width: 768px) {
-    padding: 20px 50px;
+    padding: 12px 50px;
   }
 
   .receive-nav-logo {
@@ -1708,10 +1712,10 @@ p{
 
 // Add margin to content after fixed navbar on receive-money page
 .case-study .container .receive-money-navbar + .receive-hero {
-  margin-top: 100px;
+  margin-top: 50px;
 
   @media (min-width: 768px) {
-    margin-top: 120px;
+    margin-top: 60px;
   }
 }
 
@@ -1788,10 +1792,10 @@ p{
 
 // Add Money Hero Section
 .case-study .container .receive-money-navbar + .add-money-hero {
-  margin-top: 100px;
+  margin-top: 50px;
 
   @media (min-width: 768px) {
-    margin-top: 120px;
+    margin-top: 60px;
   }
 }
 
