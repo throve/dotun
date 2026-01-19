@@ -5,6 +5,7 @@ import gsap from 'gsap'
 
 const Hero = () => {
   const typingTextRef = useRef(null)
+  const typingTextRef2 = useRef(null)
   const cursorRef = useRef(null)
   const animationStartedRef = useRef(false)
 
@@ -16,13 +17,16 @@ const Hero = () => {
     const textPart1 = "I'm a Product Designer in London, "
     const textPart2 = "Designing experiences at TELUS Health."
     const typingElement = typingTextRef.current
+    const typingElement2 = typingTextRef2.current
     const cursorElement = cursorRef.current
 
-    if (!typingElement || !cursorElement) return
+    if (!typingElement || !typingElement2 || !cursorElement) return
 
     // Set initial state
     let currentText = ''
-    typingElement.innerHTML = ''
+    let currentText2 = ''
+    typingElement.textContent = ''
+    typingElement2.textContent = ''
     cursorElement.style.opacity = '1'
 
     // Create timeline for typing animation
@@ -34,19 +38,18 @@ const Hero = () => {
       
       tl.call(() => {
         currentText += char
-        typingElement.innerHTML = `<span class="hero-location-text">${currentText}</span>`
+        typingElement.textContent = currentText
       })
       tl.to({}, { duration: delay })
     })
 
-    // Type second part (black)
-    let currentText2 = ''
+    // Type second part (black) - this will go to a new line
     textPart2.split('').forEach((char) => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
       tl.call(() => {
         currentText2 += char
-        typingElement.innerHTML = `<span class="hero-location-text">${currentText}</span><span class="hero-location-black">${currentText2}</span>`
+        typingElement2.textContent = currentText2
       })
       tl.to({}, { duration: delay })
     })
@@ -73,9 +76,13 @@ const Hero = () => {
     <div className="hero" >
         <p className="hero-intro">
           My name is Adedotun Ayodimeji, or AY.<br /> 
-          <span className="hero-location" style={{ whiteSpace: 'nowrap' }}>
-            <span ref={typingTextRef} style={{ whiteSpace: 'nowrap' }}></span>
-            <span ref={cursorRef} className="typing-cursor">|</span>
+          <span className="hero-location">
+            <span ref={typingTextRef} className="hero-location-text"></span>
+            <br />
+            <span className="hero-location-black-wrapper">
+              <span ref={typingTextRef2} className="hero-location-black"></span>
+              <span ref={cursorRef} className="typing-cursor">|</span>
+            </span>
           </span>
         </p>
         
