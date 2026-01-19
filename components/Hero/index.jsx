@@ -1,9 +1,55 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 const Hero = () => {
+  const typingTextRef = useRef(null)
+  const cursorRef = useRef(null)
+
+  useEffect(() => {
+    const text = "I'm a Product Designer in London, designing experiences at TELUS Health."
+    const typingElement = typingTextRef.current
+    const cursorElement = cursorRef.current
+
+    if (!typingElement || !cursorElement) return
+
+    // Set initial state
+    typingElement.textContent = ''
+    cursorElement.style.opacity = '1'
+
+    // Create timeline for typing animation
+    const tl = gsap.timeline({ delay: 0.5 })
+
+    // Type each character with variable speed (faster for spaces, slower for punctuation)
+    text.split('').forEach((char) => {
+      const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
+      
+      tl.call(() => {
+        typingElement.textContent += char
+      })
+      tl.to({}, { duration: delay })
+    })
+
+    // After typing is complete, make cursor blink continuously
+    tl.to(cursorElement, {
+      opacity: 0,
+      duration: 0.6,
+      repeat: -1,
+      yoyo: true,
+      ease: "power2.inOut"
+    })
+  }, [])
+
   return (
     <div className="hero" >
-        <p className="hero-intro">My name is Adedotun Ayodimeji, or AY.<br /> <span className="hero-location">I&apos;m a Product Designer in London,</span><br />designing experiences at TELUS Health.</p>
+        <p className="hero-intro">
+          My name is Adedotun Ayodimeji, or AY.<br /> 
+          <span className="hero-location">
+            <span ref={typingTextRef}></span>
+            <span ref={cursorRef} className="typing-cursor">|</span>
+          </span>
+        </p>
         
         <section className="live-apps">
           <h2 className="live-apps-title">My live apps</h2>

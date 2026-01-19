@@ -459,6 +459,24 @@ p{
 
     .hero-location {
       color: #676666;
+      display: inline-block;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      color: #676666;
+      font-weight: 400;
+      margin-left: 2px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      51%, 100% {
+        opacity: 0;
+      }
     }
   }
 
