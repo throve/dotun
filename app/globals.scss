@@ -49,6 +49,12 @@ p, li{
   width: 100%;
   background-color: #fff;
   opacity: 1;
+
+  @media (min-width: 768px) and (max-width: 1024px){
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
   
   &.loaded {
     animation: fadeIn 0.6s ease-out;
@@ -65,6 +71,8 @@ p, li{
     @media (min-width: 768px) and (max-width: 1024px){
       margin-left: 24px;
       margin-right: 24px;
+      width: calc(100% - 48px);
+      max-width: calc(880px + 48px);
     }
 
     @media (min-width: 768px){
