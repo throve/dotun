@@ -6,8 +6,13 @@ import gsap from 'gsap'
 const Hero = () => {
   const typingTextRef = useRef(null)
   const cursorRef = useRef(null)
+  const animationStartedRef = useRef(false)
 
   useEffect(() => {
+    // Prevent animation from running multiple times (React StrictMode)
+    if (animationStartedRef.current) return
+    animationStartedRef.current = true
+
     const text = "I'm a Product Designer in London, designing experiences at TELUS Health."
     const typingElement = typingTextRef.current
     const cursorElement = cursorRef.current
@@ -15,6 +20,7 @@ const Hero = () => {
     if (!typingElement || !cursorElement) return
 
     // Set initial state
+    let currentText = ''
     typingElement.textContent = ''
     cursorElement.style.opacity = '1'
 
@@ -26,7 +32,8 @@ const Hero = () => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
       tl.call(() => {
-        typingElement.textContent += char
+        currentText += char
+        typingElement.textContent = currentText
       })
       tl.to({}, { duration: delay })
     })
@@ -39,6 +46,14 @@ const Hero = () => {
       yoyo: true,
       ease: "power2.inOut"
     })
+
+    // Cleanup function
+    return () => {
+      if (tl) {
+        tl.kill()
+      }
+      animationStartedRef.current = false
+    }
   }, [])
 
   return (
