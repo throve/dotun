@@ -120,6 +120,10 @@ p, li{
 
     h1{
       margin-bottom: 48px;
+      white-space: normal;
+      overflow: visible;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     h4{
@@ -907,10 +911,13 @@ p{
 .case-h1{
   font-weight: 700;
   font-size: 24px;
-  
+  white-space: normal;
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
   @media (min-width: 768px){
     font-size: 48px;
-
   }
 }
 
@@ -1770,6 +1777,10 @@ p{
 
   .case-h1 {
     margin-bottom: 16px;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     @media (min-width: 768px) {
       margin-bottom: 24px;
@@ -1866,13 +1877,14 @@ p{
 
   .case-h1 {
     margin-bottom: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     @media (min-width: 768px) {
       margin-bottom: 24px;
-      white-space: normal;
     }
   }
 
