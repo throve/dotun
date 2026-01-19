@@ -13,7 +13,8 @@ const Hero = () => {
     if (animationStartedRef.current) return
     animationStartedRef.current = true
 
-    const text = "I'm a Product Designer in London, designing experiences at TELUS Health."
+    const textPart1 = "I'm a Product Designer in London, "
+    const textPart2 = "designing experiences at TELUS Health."
     const typingElement = typingTextRef.current
     const cursorElement = cursorRef.current
 
@@ -21,19 +22,31 @@ const Hero = () => {
 
     // Set initial state
     let currentText = ''
-    typingElement.textContent = ''
+    typingElement.innerHTML = ''
     cursorElement.style.opacity = '1'
 
     // Create timeline for typing animation
     const tl = gsap.timeline({ delay: 0.5 })
 
-    // Type each character with variable speed (faster for spaces, slower for punctuation)
-    text.split('').forEach((char) => {
+    // Type first part (gray)
+    textPart1.split('').forEach((char) => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
       tl.call(() => {
         currentText += char
-        typingElement.textContent = currentText
+        typingElement.innerHTML = `<span class="hero-location-text">${currentText}</span>`
+      })
+      tl.to({}, { duration: delay })
+    })
+
+    // Type second part (black)
+    let currentText2 = ''
+    textPart2.split('').forEach((char) => {
+      const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
+      
+      tl.call(() => {
+        currentText2 += char
+        typingElement.innerHTML = `<span class="hero-location-text">${currentText}</span><span class="hero-location-black">${currentText2}</span>`
       })
       tl.to({}, { duration: delay })
     })
