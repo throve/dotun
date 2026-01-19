@@ -6,7 +6,6 @@ import gsap from 'gsap'
 const Hero = () => {
   const typingTextRef = useRef(null)
   const typingTextRef2 = useRef(null)
-  const cursorRef = useRef(null)
   const animationStartedRef = useRef(false)
 
   useEffect(() => {
@@ -18,27 +17,25 @@ const Hero = () => {
     const textPart2 = "Designing experiences at TELUS Health."
     const typingElement = typingTextRef.current
     const typingElement2 = typingTextRef2.current
-    const cursorElement = cursorRef.current
 
-    if (!typingElement || !typingElement2 || !cursorElement) return
+    if (!typingElement || !typingElement2) return
 
     // Set initial state
     let currentText = ''
     let currentText2 = ''
     typingElement.textContent = ''
     typingElement2.textContent = ''
-    cursorElement.style.opacity = '1'
 
     // Create timeline for typing animation
     const tl = gsap.timeline({ delay: 0.5 })
 
-    // Type first part (gray) without cursor
+    // Type first part (gray) with cursor
     textPart1.split('').forEach((char) => {
       const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
       
       tl.call(() => {
         currentText += char
-        typingElement.textContent = currentText
+        typingElement.innerHTML = currentText + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
       })
       tl.to({}, { duration: delay })
     })
@@ -49,25 +46,16 @@ const Hero = () => {
       
       tl.call(() => {
         currentText2 += char
+        typingElement.innerHTML = currentText
         typingElement2.innerHTML = currentText2 + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
       })
       tl.to({}, { duration: delay })
     })
 
-    // After typing is complete, remove inline cursor and use the ref cursor with blink animation
+    // After typing is complete, remove inline cursor
     tl.call(() => {
       typingElement.innerHTML = currentText
       typingElement2.innerHTML = currentText2
-      cursorElement.style.opacity = '1'
-    })
-    
-    // Make cursor blink continuously
-    tl.to(cursorElement, {
-      opacity: 0,
-      duration: 0.6,
-      repeat: -1,
-      yoyo: true,
-      ease: "power2.inOut"
     })
 
     // Cleanup function
@@ -88,7 +76,6 @@ const Hero = () => {
             <br />
             <span className="hero-location-black-wrapper">
               <span ref={typingTextRef2} className="hero-location-black"></span>
-              <span ref={cursorRef} className="typing-cursor">|</span>
             </span>
           </span>
         </p>
