@@ -17,7 +17,7 @@ const Navbar = ({color}) => {
         {/* <h1 style={{color: "#fff"}} >{color}</h1> */}
         <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" >
 
-          <button className={`${inter.className}`}>Download CV</button> 
+          <button className={`${inter.className}`}><span>Download CV</span></button> 
         </a>
     </div>
   )

@@ -1,0 +1,31 @@
+'use client'
+
+export default function Error({ error, reset }) {
+  return (
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      minHeight: '100vh',
+      padding: '20px',
+      textAlign: 'center'
+    }}>
+      <h2>Something went wrong!</h2>
+      <button 
+        onClick={() => reset()}
+        style={{
+          marginTop: '20px',
+          padding: '10px 20px',
+          backgroundColor: '#FF593B',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '7.5px',
+          cursor: 'pointer'
+        }}
+      >
+        Try again
+      </button>
+    </div>
+  )
+}

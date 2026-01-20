@@ -118,8 +118,11 @@ p, li{
     background-color: #000;
     color: #fff;
     position: relative;
+    box-sizing: border-box;
 
     @media (min-width: 768px) and (max-width: 1024px){
+      width: calc(100% - 48px);
+      max-width: calc(880px + 48px);
       margin-left: 24px;
       margin-right: 24px;
     }
@@ -142,6 +145,20 @@ p, li{
       overflow: visible;
       word-wrap: break-word;
       overflow-wrap: break-word;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 4px;
+      
+      @media (max-width: 767px) {
+        height: auto;
+        min-height: 200px;
+      }
     }
 
     h4{
@@ -202,6 +219,15 @@ p, li{
         gap: 16px;
       }
 
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+
       .group{
         margin-bottom: 48px;
         width: 100%;
@@ -260,8 +286,10 @@ p, li{
             width: 40%;
           }
           
-          &:hover{
-            background-color: #4C4C4C ;
+          @media (hover: hover) {
+            &:hover{
+              background-color: #4C4C4C ;
+            }
           }
   
           .link{
@@ -375,6 +403,10 @@ p, li{
     margin-bottom: 0;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   button {
     padding: 6px 28px;
     color: #010101;
@@ -387,6 +419,56 @@ p, li{
     font-size: 16px;
     line-height: 178%;
     white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #010101;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+      border-radius: 7.5px;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: #ffffff !important;
+        transform: scale(1.05);
+        
+        &::before {
+          transform: scaleX(1);
+        }
+
+        & > * {
+          color: #ffffff !important;
+        }
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+      color: #ffffff !important;
+
+      & > * {
+        color: #ffffff !important;
+      }
+    }
   }
 
   .logo{
@@ -399,8 +481,10 @@ p, li{
       margin-left: 6px;
     }
 
-    &:hover{
-      cursor: pointer;
+    @media (hover: hover) {
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 
@@ -588,8 +672,10 @@ p{
       font-weight: 500;
       transition: opacity 0.2s;
 
-      &:hover {
-        text-decoration: underline;
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       @media (min-width: 768px) {
@@ -849,8 +935,10 @@ p{
             @media (min-width: 768px){
               transition: transform 0.3s ease;
 
-              &:hover{
-                transform: scale(0.95);
+              @media (hover: hover) {
+                &:hover{
+                  transform: scale(0.95);
+                }
               }
 
               p{
@@ -882,8 +970,10 @@ p{
           width: 40%;
         }
         
-        &:hover{
-          background-color: #4C4C4C ;
+        @media (hover: hover) {
+          &:hover{
+            background-color: #4C4C4C ;
+          }
         }
 
         .link{
@@ -906,8 +996,10 @@ p{
           @media (min-width: 768px){
             transition: transform 0.3s ease;
 
-            &:hover{
-              transform: scale(0.95);
+            @media (hover: hover) {
+              &:hover{
+                transform: scale(0.95);
+              }
             }
           }
         }
@@ -931,8 +1023,10 @@ p{
           .link{
             transition: transform 0.3s ease;
 
-            &:hover{
-              transform: scale(0.95);
+            @media (hover: hover) {
+              &:hover{
+                transform: scale(0.95);
+              }
             }
 
             p{
@@ -968,6 +1062,7 @@ p{
   font-size: 24px;
   white-space: normal;
   overflow: visible;
+  text-overflow: clip;
   word-wrap: break-word;
   overflow-wrap: break-word;
 
@@ -982,6 +1077,11 @@ p{
   margin-bottom: 32px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    gap: 16px;
+  }
 
   .left{
     width: 100%;
@@ -1618,8 +1718,10 @@ p{
     cursor: pointer;
     transition: opacity 0.3s ease;
 
-    &:hover {
-      opacity: 0.8;
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     img {
@@ -1652,8 +1754,10 @@ p{
       transition: color 0.3s ease;
       position: relative;
 
-      &:hover {
-        color: #fff;
+      @media (hover: hover) {
+        &:hover {
+          color: #fff;
+        }
       }
 
       &.active {
@@ -1693,10 +1797,54 @@ p{
     line-height: 178%;
     white-space: nowrap;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 
-    &:hover {
-      background-color: #e04a2e;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #010101;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+      border-radius: 7.5px;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: #ffffff !important;
+        transform: scale(1.05);
+        
+        &::before {
+          transform: scaleX(1);
+        }
+
+        & > * {
+          color: #ffffff !important;
+        }
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+      color: #ffffff !important;
+
+      & > * {
+        color: #ffffff !important;
+      }
     }
   }
 
@@ -1782,8 +1930,10 @@ p{
       transition: color 0.3s ease;
       position: relative;
 
-      &:hover {
-        color: #fff;
+      @media (hover: hover) {
+        &:hover {
+          color: #fff;
+        }
       }
 
       &.active {
@@ -1815,6 +1965,11 @@ p{
     height: 16px;
     background-color: #000;
     z-index: -1;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      left: -24px;
+      right: -24px;
+    }
 
     @media (min-width: 768px) {
       left: -50px;
@@ -1916,6 +2071,11 @@ p{
     height: 16px;
     background-color: #000;
     z-index: -1;
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      left: -24px;
+      right: -24px;
+    }
 
     @media (min-width: 768px) {
       left: -50px;

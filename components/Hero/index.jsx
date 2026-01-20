@@ -7,61 +7,78 @@ const Hero = () => {
   const typingTextRef = useRef(null)
   const typingTextRef2 = useRef(null)
   const animationStartedRef = useRef(false)
+  const timelineRef = useRef(null)
 
   useEffect(() => {
     // Prevent animation from running multiple times (React StrictMode)
-    if (animationStartedRef.current) return
-    animationStartedRef.current = true
+    if (animationStartedRef.current) {
+      return
+    }
 
     const textPart1 = "I'm a Product Designer in London, "
     const textPart2 = "Designing experiences at TELUS Health."
-    const typingElement = typingTextRef.current
-    const typingElement2 = typingTextRef2.current
+    
+    // Wait for refs to be available
+    const initAnimation = () => {
+      const typingElement = typingTextRef.current
+      const typingElement2 = typingTextRef2.current
 
-    if (!typingElement || !typingElement2) return
+      if (!typingElement || !typingElement2) {
+        // Retry after a short delay if refs aren't ready
+        setTimeout(initAnimation, 50)
+        return
+      }
 
-    // Set initial state
-    let currentText = ''
-    let currentText2 = ''
-    typingElement.textContent = ''
-    typingElement2.textContent = ''
+      animationStartedRef.current = true
 
-    // Create timeline for typing animation
-    const tl = gsap.timeline({ delay: 0.5 })
+      // Set initial state
+      let currentText = ''
+      let currentText2 = ''
+      typingElement.textContent = ''
+      typingElement2.textContent = ''
 
-    // Type first part (gray) with cursor
-    textPart1.split('').forEach((char) => {
-      const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
-      
-      tl.call(() => {
-        currentText += char
-        typingElement.innerHTML = currentText + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+      // Create timeline for typing animation
+      const tl = gsap.timeline({ delay: 0.5 })
+      timelineRef.current = tl
+
+      // Type first part (gray) with cursor
+      textPart1.split('').forEach((char) => {
+        const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
+        
+        tl.call(() => {
+          currentText += char
+          typingElement.innerHTML = currentText + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+        })
+        tl.to({}, { duration: delay })
       })
-      tl.to({}, { duration: delay })
-    })
 
-    // Move cursor to second line and type second part (black) with cursor
-    textPart2.split('').forEach((char) => {
-      const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
-      
+      // Move cursor to second line and type second part (black) with cursor
+      textPart2.split('').forEach((char) => {
+        const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
+        
+        tl.call(() => {
+          currentText2 += char
+          typingElement.innerHTML = currentText
+          typingElement2.innerHTML = currentText2 + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+        })
+        tl.to({}, { duration: delay })
+      })
+
+      // After typing is complete, remove inline cursor
       tl.call(() => {
-        currentText2 += char
         typingElement.innerHTML = currentText
-        typingElement2.innerHTML = currentText2 + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+        typingElement2.innerHTML = currentText2
       })
-      tl.to({}, { duration: delay })
-    })
+    }
 
-    // After typing is complete, remove inline cursor
-    tl.call(() => {
-      typingElement.innerHTML = currentText
-      typingElement2.innerHTML = currentText2
-    })
+    // Start the animation initialization
+    initAnimation()
 
-    // Cleanup function
+    // Cleanup function for the effect
     return () => {
-      if (tl) {
-        tl.kill()
+      if (timelineRef.current) {
+        timelineRef.current.kill()
+        timelineRef.current = null
       }
       animationStartedRef.current = false
     }
