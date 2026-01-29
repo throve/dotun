@@ -158,9 +158,13 @@ p, li{
         }
       }
 
-      /* Mobile: hamburger + dropdown (same as receive-money-navbar) */
+      /* Keep navbar fixed when scrolling (mobile menu still positions relative to it) */
       &.navbar--with-tabs {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
       }
 
       .mobile-menu-toggle {
