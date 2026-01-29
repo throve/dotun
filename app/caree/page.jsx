@@ -88,19 +88,19 @@ const Receive = () => {
           <div className="group" id="summary">
 
             <h3>Executive Summary</h3>
-               <p>The UK is facing a "care tsunami": a rapidly aging population coupled with a severe shortage of professional carers. Smart Care is a mobile platform designed to empower carers by automating the "logistical admin" of care. By integrating third-party services like Uber and Deliveroo, the app reduces the operational burden on carers, allowing them to focus on high-quality patient interaction while managing more clients effectively.</p>
+               <p>The UK is facing a &quot;care tsunami&quot;: a rapidly aging population coupled with a severe shortage of professional carers. Smart Care is a mobile platform designed to empower carers by automating the &quot;logistical admin&quot; of care. By integrating third-party services like Uber and Deliveroo, the app reduces the operational burden on carers, allowing them to focus on high-quality patient interaction while managing more clients effectively.</p>
           </div>
 
           <div className="group">
             <h3>The Challenge</h3>
             <p>With over 18.5 million people in the UK projected to be over 60 by 2025, the NHS and social care sectors are overwhelmed.</p>
             <p><strong>The Problem:</strong> Carers spend a disproportionate amount of time on manual coordination—booking transport, shopping for groceries, and managing household tasks—rather than actual caregiving.</p>
-            <p><strong>The Impact:</strong> Severe burnout, staff shortages, and "bed blocking," where patients cannot be discharged from hospitals because there is no logistical support at home.</p>
+            <p><strong>The Impact:</strong> Severe burnout, staff shortages, and &quot;bed blocking,&quot; where patients cannot be discharged from hospitals because there is no logistical support at home.</p>
           </div>
 
           <div className="group">
             <h3>Solution</h3>
-            <p>Instead of building another simple scheduling tool, I designed a logistics-first ecosystem. I identified that the most effective way to "scale" a carer's impact is to give them the tools to delegate secondary tasks.</p>
+            <p>Instead of building another simple scheduling tool, I designed a logistics-first ecosystem. I identified that the most effective way to &quot;scale&quot; a carer&apos;s impact is to give them the tools to delegate secondary tasks.</p>
             <p><strong>Key Innovation: 3rd-Party API Integration</strong> I designed a seamless interface that allows Carers and Care Home Admins to:</p>
             <p><strong>Logistics:</strong> Book Uber for patient transport to medical checkups.</p>
             <p><strong>Nutrition:</strong> Order specialized meals via Deliveroo.</p>
@@ -112,8 +112,8 @@ const Receive = () => {
           <div className="group" id="research">
             <h3>Research & Methodology: Lean & Empathetic</h3>
             <p>I utilized a Lean UX / Double Diamond approach to ensure the product was grounded in real-world necessity.</p>
-            <p><strong>Discovery:</strong> Conducted foundational research into NHS trends and ONS data. I focused on the "Time-Poverty" of carers, identifying that logistical friction was the #1 cause of daily stress.</p>
-            <p><strong>Competitive Analysis:</strong> Found that most existing tools (like scheduling apps) were "passive"—they tracked time but didn't solve the tasks within that time. Smart Care was designed to be "active."</p>
+            <p><strong>Discovery:</strong> Conducted foundational research into NHS trends and ONS data. I focused on the &quot;Time-Poverty&quot; of carers, identifying that logistical friction was the #1 cause of daily stress.</p>
+            <p><strong>Competitive Analysis:</strong> Found that most existing tools (like scheduling apps) were &quot;passive&quot;—they tracked time but didn&apos;t solve the tasks within that time. Smart Care was designed to be &quot;active.&quot;</p>
             <p><strong>Synthesis:</strong> Developed Personas for both the time-poor professional carer and the vulnerable LTC (Long Term Condition) patient to map the emotional high-points and friction-points of the care journey.</p>
             <p style={{opacity: "0"}} > .</p>
             <ImageGrid images={[{name: "", url: "/caree-methodology.webp"}]} grid={1} />
