@@ -67,23 +67,33 @@ export const medtech = {
 
     startups: [
         {
-            name: "Zapmed X",
-            des: "At ZapMedX, I design user interfaces for our MVP. ZapMedX delivers medicines to your doorstep, picks up blood samples for testing with results sent home, and offers instant online consultations, making healthcare convenient and accessible.",
-            caseStudies: [
-                {
-                    title: "Pharmacy, Diagnosis and Consultation",
-                    caseStudyUrl: "/zapmedx"
-                },
-              
-            ]
-        },
-        {
             name: "Caree",
             des: "At Caree, I handle UX/UI design, research, and interaction. The Caree app aims to make health carer jobs more flexible and effective in the United Kingdom, enhancing both user and caregiver experiences.",
             caseStudies: [
                 {
                     title: "Real time scheduling and care assistance",
-                    caseStudyUrl: "/caree"
+                    caseStudyUrl: "/caree",
+                    header: "Smart Care: Bridging the UK Care Gap through Integrated Services",
+                    images: [
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1769683176/Homepage_ite_2_zaju1c.png",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1769683176/Personal_detail_page_xqyok0.png",
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1769683189/13_Pro_-_17_vyp77r.png"
+                    ]
+                },
+              
+            ]
+        },
+        {
+            name: "Zapmed X",
+            des: "At ZapMedX, I design user interfaces for our MVP. ZapMedX delivers medicines to your doorstep, picks up blood samples for testing with results sent home, and offers instant online consultations, making healthcare convenient and accessible.",
+            caseStudies: [
+                {
+                    title: "Pharmacy, Diagnosis and Consultation",
+                    caseStudyUrl: "/zapmedx",
+                    header: "Pharmacy, Diagnosis and Consultation.",
+                    images: [
+                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1769685097/image_35_nlqj8m.png"
+                    ]
                 },
               
             ]

@@ -28,26 +28,77 @@ const Medtech = () => {
 
                         <div className="case-studies" >
                             <div className="fist-div" >
-
-                                <div className="first c-s-card desk" >
-                                    <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[0].title}</span>
-                                    <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
-                                        <div className="link" >
-                                            <p>View project</p>
-                                            <img src="/arrow.svg" alt="" />
-                                        </div>
-                                    </Link>
-                                </div>
-                                <Link className='mob' href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
-                                    <div className="c-s-card mob"  >
-                                    <span style={{color: data.color, width: "80%"}}  className="case-title" >{startup.caseStudies[0].title}</span>
-
-                                            <div className="link" >
-                                                <p>View project</p>
-                                                <img src="/arrow.svg" alt="" />
+                                {startup.caseStudies[0].images && startup.caseStudies[0].header ? (
+                                    <>
+                                        <div className="byte-case-study desk">
+                                            <div className="byte-images-container">
+                                                {startup.caseStudies[0].images.map((imageUrl, idx) => (
+                                                    <img
+                                                        key={idx}
+                                                        src={imageUrl}
+                                                        alt={`${startup.name} case study ${idx + 1}`}
+                                                        className="byte-case-image"
+                                                    />
+                                                ))}
                                             </div>
-                                    </div>
-                                </Link>
+                                            <div className="byte-case-header">
+                                                <h3 style={{color: '#E1E1E1'}} className="case-title">
+                                                    {startup.caseStudies[0].header}
+                                                </h3>
+                                                <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                                    <div className="link" >
+                                                        <p>View project</p>
+                                                        <img src="/arrow.svg" alt="" />
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className="byte-case-study mob">
+                                            <div className="byte-images-container">
+                                                {startup.caseStudies[0].images.map((imageUrl, idx) => (
+                                                    <img
+                                                        key={idx}
+                                                        src={imageUrl}
+                                                        alt={`${startup.name} case study ${idx + 1}`}
+                                                        className="byte-case-image"
+                                                    />
+                                                ))}
+                                            </div>
+                                            <div className="byte-case-header">
+                                                <h3 style={{color: '#E1E1E1'}} className="case-title">
+                                                    {startup.caseStudies[0].header}
+                                                </h3>
+                                                <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                                    <div className="link" >
+                                                        <p>View project</p>
+                                                        <img src="/arrow.svg" alt="" />
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div className="first c-s-card desk" >
+                                            <span style={{color: data.color}}  className="case-title" >{startup.caseStudies[0].title}</span>
+                                            <Link href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                                <div className="link" >
+                                                    <p>View project</p>
+                                                    <img src="/arrow.svg" alt="" />
+                                                </div>
+                                            </Link>
+                                        </div>
+                                        <Link className='mob' href={startup.caseStudies[0].caseStudyUrl} style={{textDecoration: "none", color: "#fff"}} >
+                                            <div className="c-s-card mob"  >
+                                                <span style={{color: data.color, width: "80%"}}  className="case-title" >{startup.caseStudies[0].title}</span>
+                                                <div className="link" >
+                                                    <p>View project</p>
+                                                    <img src="/arrow.svg" alt="" />
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </>
+                                )}
                             </div>
                             {/* <div className="rest" >
                                 <div className="second c-s-card " >

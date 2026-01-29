@@ -47,8 +47,12 @@ export default function Home() {
       
       <div className="projects">
         <Fintech />
-        <Medtech />
-        <Side />
+        <div id="health">
+          <Medtech />
+        </div>
+        <div id="side-projects">
+          <Side />
+        </div>
       </div>
         <IndexFooter />
       </div>

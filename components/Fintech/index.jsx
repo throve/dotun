@@ -1,20 +1,72 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { fintech as data } from '@/data'
 import Link from 'next/link'
 // import { Link }
 
+const SECTIONS = [
+  { id: 'fintech', label: 'FinTech' },
+  { id: 'health', label: 'Health' },
+  { id: 'side-projects', label: 'Others' },
+]
+
 const Fintech = () => {
+    const [activeFilter, setActiveFilter] = useState('fintech')
 
     useEffect(() => {
         console.log(data)
     }, [])
+
+    const scrollToSection = (sectionId) => {
+        const el = sectionId === 'fintech' ? document.getElementById('fintech') : document.getElementById(sectionId)
+        if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY
+            window.scrollTo({ top: y, behavior: 'smooth' })
+            setActiveFilter(sectionId)
+        }
+    }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const fintechEl = document.getElementById('fintech')
+            const healthEl = document.getElementById('health')
+            const sideEl = document.getElementById('side-projects')
+            if (!fintechEl || !healthEl || !sideEl) return
+            const vh = window.innerHeight * 0.4
+            const fintechTop = fintechEl.getBoundingClientRect().top
+            const healthTop = healthEl.getBoundingClientRect().top
+            const sideTop = sideEl.getBoundingClientRect().top
+            if (sideTop <= vh) setActiveFilter('side-projects')
+            else if (healthTop <= vh) setActiveFilter('health')
+            else setActiveFilter('fintech')
+        }
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        handleScroll()
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
    return ( 
-    <div className="fintech-wrapper">
+    <div id="fintech" className="fintech-wrapper">
         <section className="live-apps">
-          <h2 className="live-apps-title">My work</h2>
-          <p className="live-apps-subtitle">These are projects I&apos;m allowed to share publicly</p>
+          <div className="live-apps-heading">
+            <h2 className="live-apps-title">My work</h2>
+            <p className="live-apps-subtitle">These are projects I&apos;m allowed to share publicly</p>
+          </div>
+          <div className="work-filters" role="tablist" aria-label="Filter work by category">
+            {SECTIONS.map(({ id, label }) => (
+              <button
+                key={id}
+                type="button"
+                role="tab"
+                className={`work-filter-btn ${activeFilter === id ? 'active' : ''}`}
+                onClick={() => scrollToSection(id)}
+                aria-selected={activeFilter === id}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </section>
 
         <div className="industry" >

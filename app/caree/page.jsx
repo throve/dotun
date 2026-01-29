@@ -23,7 +23,7 @@ const Receive = () => {
         role: "CEO"
       }
     ],
-    status: "Live",
+    status: "Product casestudy",
     year: "2023"
 
   }
@@ -48,10 +48,9 @@ const Receive = () => {
   return (
     <div className='case-study' >
       <div className="container">
-        <Navbar color={"white"} />
+        <Navbar color={"white"} tabs={[{ label: 'Summary', sectionId: 'summary' }, { label: 'Research', sectionId: 'research' }, { label: 'Design', sectionId: 'design' }]} />
 
-        <h1 className='case-h1'  >Smart Care Mobile App revolutionizes 
-        personalized care and support planning</h1>
+        <h1 className='case-h1'  >Smart Care: Bridging the UK Care Gap through Integrated Logistics & Support Orchestration</h1>
         <ImageGrid images={images} grid={4} />
         <div className="details">
           <div>
@@ -86,42 +85,38 @@ const Receive = () => {
         </div>
         
         <div className="case-info">
-          <div className="group">
+          <div className="group" id="summary">
 
-            <h3>Introduction</h3>
-               <p>{"'The Older age and Individuals living with long term circumstances (LTCs) are the best clients of NHS administrations and the biggest piece of the well-being administration financial plan are spent on their help. The consideration and backing expected to live well with an LTC are generally unique to that for the intense medical issues - while individuals with LTCs regularly spend only a couple of hours a year with well-being and care experts, they live with their circumstances and make due them consistently themselves. The well-being and care framework should uphold people to have the information, abilities also certainty to plan and deal with their own well-being and care, and to help one more with regards to their more extended families and networks. We in this manner need a significant re-plan of current methodologies. This will call for some progressions across the Well being and care framework: from the manner in which experts and individuals cooperate in a face to face counsels, to how experts are prepared and what backing individuals can tap into, including support for carers and relatives&'. Propels in medical care have helped individuals in England to live longer than any time in recent memory. Therefore, the quantity of more seasoned individuals in England is developing fundamentally and this pace of development is projected to accelerate throughout the following 20 years. This is uplifting news for us all yet it makes a test for the NHS - as we age we will more often than not get long-haul conditions and need more well-being and social consideration."}</p>
+            <h3>Executive Summary</h3>
+               <p>The UK is facing a "care tsunami": a rapidly aging population coupled with a severe shortage of professional carers. Smart Care is a mobile platform designed to empower carers by automating the "logistical admin" of care. By integrating third-party services like Uber and Deliveroo, the app reduces the operational burden on carers, allowing them to focus on high-quality patient interaction while managing more clients effectively.</p>
           </div>
 
           <div className="group">
-            <h3>Problem Definition</h3>
-            <p>{pd}</p>
+            <h3>The Challenge</h3>
+            <p>With over 18.5 million people in the UK projected to be over 60 by 2025, the NHS and social care sectors are overwhelmed.</p>
+            <p><strong>The Problem:</strong> Carers spend a disproportionate amount of time on manual coordination—booking transport, shopping for groceries, and managing household tasks—rather than actual caregiving.</p>
+            <p><strong>The Impact:</strong> Severe burnout, staff shortages, and "bed blocking," where patients cannot be discharged from hospitals because there is no logistical support at home.</p>
           </div>
 
           <div className="group">
             <h3>Solution</h3>
-            
-            <p>{"Due to the high rate of Personal Health Carers and professionals needed in the United Kingdom. The number of Carers needed is always not enough, especially since the time of Covid19. So, the app will make a Carer job more flexible and effective, meaning with a smart care app, Care homes and carer can look after patients and clients effectively with perfect and real time care scheduling. Now few carer can reach more patient easily. The app will work with 3rd parties apps like Uber for transport, Diliveroo for food, Getir for groceries and Airtasker for household task and many more. The carer and care home admin will be logged in as an admin and make quick orders for patients or client."}</p>
+            <p>Instead of building another simple scheduling tool, I designed a logistics-first ecosystem. I identified that the most effective way to "scale" a carer's impact is to give them the tools to delegate secondary tasks.</p>
+            <p><strong>Key Innovation: 3rd-Party API Integration</strong> I designed a seamless interface that allows Carers and Care Home Admins to:</p>
+            <p><strong>Logistics:</strong> Book Uber for patient transport to medical checkups.</p>
+            <p><strong>Nutrition:</strong> Order specialized meals via Deliveroo.</p>
+            <p><strong>Essentials:</strong> Rapidly restock groceries and medical supplies through Getir.</p>
+            <p><strong>Maintenance:</strong> Delegate household chores via Airtasker.</p>
+            <p><strong>The Result:</strong> By turning the app into a central hub for these services, a single carer can manage a larger caseload without compromising the quality of personalized care.</p>
           </div>
 
-          <div className="group">
-            <h3>Methodology</h3>
-            
-            <p>{"I followed a lean UX design thinking process to ensure that my decisions were supported through user research and feedback. Double diamond design process model."}</p>
+          <div className="group" id="research">
+            <h3>Research & Methodology: Lean & Empathetic</h3>
+            <p>I utilized a Lean UX / Double Diamond approach to ensure the product was grounded in real-world necessity.</p>
+            <p><strong>Discovery:</strong> Conducted foundational research into NHS trends and ONS data. I focused on the "Time-Poverty" of carers, identifying that logistical friction was the #1 cause of daily stress.</p>
+            <p><strong>Competitive Analysis:</strong> Found that most existing tools (like scheduling apps) were "passive"—they tracked time but didn't solve the tasks within that time. Smart Care was designed to be "active."</p>
+            <p><strong>Synthesis:</strong> Developed Personas for both the time-poor professional carer and the vulnerable LTC (Long Term Condition) patient to map the emotional high-points and friction-points of the care journey.</p>
             <p style={{opacity: "0"}} > .</p>
             <ImageGrid images={[{name: "", url: "/caree-methodology.webp"}]} grid={1} />
-            <p>The Double Diamond Framework by the British Design Council permits me to settle on purposeful plan choices by investigating different choices (divergent thinking), while at the same time approving more grounded ones and removing the more vulnerable ones (convergent thinking). </p>
-            <p>I utilise this equivalent way to  address two things: </p>
-            <p>1. Is this the right issue to tackle? </p>
-            <p>2. Is this the right solution to execute?</p>
-            <p>The Process is intended to investigate every possibility to guarantee that the planned heading is bound to make the ideal effect.</p>
-            
-          </div>
-
-          <div className="group">
-            <p style={{fontWeight: "bold"}} >THE DOUBLE DIAMOND DESIGN PROCESS INCLUDES</p>
-            <p><b>Discover</b>: The first step of the design process is critical for gathering information, requirements, and other data you need in order to make informed decisions later. This part helps me to empathise with the users through problem exploration, Foundational research, Surveys and Competitive analysis </p>
-            <p>Foundational Research : According to the NHS More than one in five of us are already over 60, and the number of people over 60 is expected to increase from 14.9 million in 2014 to 18.5 million in 2025 (ONS, 2015) 75% of 21</p>
-            <p>75-year-olds in the UK have more than one long term condition, rising to 82% of 85- year-olds (Barnett et al, 2012) Between 2007/08 and 2013/14 the numbers of A&E attendances by people aged 60 or over increased by two-thirds, a steeper increase than is expected by demographic change alone (NHS England data, 2015) </p>
           </div>
 
           <div className="group">
@@ -134,7 +129,7 @@ const Receive = () => {
             
           </div>
 
-          <div className="group">
+          <div className="group" id="design">
             <h3>Requirement Specification </h3>
             <p>The Requirement specifications were used to outline possible features of pages. It was derived from the user stories.</p>
             <p style={{opacity: "0"}} > .</p>

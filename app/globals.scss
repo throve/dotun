@@ -127,14 +127,204 @@ p, li{
       margin-right: 24px;
     }
 
-    .navbar {
+    /* Only hide shared navbar when page has custom nav (e.g. receive-money tabs) */
+    &:has(.receive-money-navbar) .navbar {
       display: none;
     }
 
-    /* Add consistent spacing between hidden navbar and first heading */
-    /* Ensure a consistent gap between the navbar (hidden) and the first heading */
+    /* Case-study pages with shared navbar (e.g. Caree): match receive-money-navbar look */
+    .navbar {
+      background-color: #000;
+      border-bottom: 1px solid #333;
+
+      @media (min-width: 768px) {
+        padding: 12px 50px;
+      }
+
+      /* Logo hover: same as .receive-nav-logo on receive-money page */
+      .logo {
+        transition: opacity 0.3s ease;
+        @media (hover: hover) {
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      /* On mobile with tabs: hide desktop CV link (shown in mobile menu instead) */
+      &.navbar--with-tabs .navbar-cv-link {
+        @media (max-width: 1024px) {
+          display: none;
+        }
+      }
+
+      /* Mobile: hamburger + dropdown (same as receive-money-navbar) */
+      &.navbar--with-tabs {
+        position: relative;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 24px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+
+        @media (max-width: 1024px) {
+          display: flex;
+        }
+
+        span {
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          transform-origin: center;
+          display: block;
+        }
+
+        &.open span {
+          &:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+          }
+        }
+      }
+
+      .navbar-mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        border-top: 1px solid #333;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        z-index: 1000;
+
+        @media (min-width: 1025px) {
+          display: none;
+        }
+
+        button {
+          background: none;
+          border: none;
+          color: #A4A4A4;
+          font-size: 16px;
+          font-weight: 400;
+          cursor: pointer;
+          padding: 12px 0;
+          text-align: left;
+          transition: color 0.3s ease;
+
+          @media (hover: hover) {
+            &:hover {
+              color: #fff;
+            }
+          }
+
+          &.active {
+            color: #FF593B;
+            font-weight: 500;
+          }
+        }
+
+        .navbar-mobile-cv {
+          width: 100%;
+          margin-top: 8px;
+          padding: 12px 28px;
+          font-size: 16px;
+          color: #010101;
+          background-color: #FF593B;
+          border-radius: 7.5px;
+          border: none;
+          outline: none;
+          font-weight: 500;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+
+      /* Nav tabs (Summary, Research, Design): same interaction as .receive-nav-tabs */
+      .navbar-tabs {
+        display: none;
+        gap: 24px;
+        align-items: center;
+        flex: 1;
+        justify-content: center;
+        margin: 0 16px;
+
+        @media (min-width: 1025px) {
+          display: flex;
+        }
+
+        button {
+          background: none;
+          border: none;
+          color: #A4A4A4;
+          font-size: 16px;
+          font-weight: 400;
+          cursor: pointer;
+          padding: 8px 0;
+          transition: color 0.3s ease;
+          position: relative;
+
+          @media (hover: hover) {
+            &:hover {
+              color: #fff;
+            }
+          }
+
+          &.active {
+            color: #FF593B;
+            font-weight: 500;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 2px;
+              background-color: #FF593B;
+            }
+          }
+        }
+      }
+    }
+
+    /* Spacing when navbar is visible: push first heading below fixed navbar */
     .navbar + h1,
-    .navbar + .case-h1,
+    .navbar + .case-h1 {
+      margin-top: 80px;
+    }
+
+    @media (min-width: 768px) {
+      .navbar + h1,
+      .navbar + .case-h1 {
+        margin-top: 88px;
+      }
+    }
+
+    /* When navbar is hidden, no extra top margin on first heading */
+    &:has(.receive-money-navbar) .navbar + h1,
+    &:has(.receive-money-navbar) .navbar + .case-h1 {
+      margin-top: 0;
+    }
+
     h1.case-h1:first-child {
       margin-top: 0;
     }
@@ -577,17 +767,22 @@ p{
     }
   }
 
+  /* My live apps section only (Hero) – block layout, title + subtitle left-aligned */
   .live-apps {
     margin-top: 82px;
     width: 100%;
     max-width: 100%;
+    display: block;
+    text-align: left;
 
     .live-apps-title {
       font-family: 'Inter', sans-serif;
       font-size: 24px;
       font-weight: 400;
-      margin: 0 0 2px 0;
+      margin: 0 0 4px 0;
       color: #0E0E0E;
+      text-align: left;
+      display: block;
 
       @media (min-width: 768px) {
         font-size: 24px;
@@ -597,9 +792,11 @@ p{
     .live-apps-subtitle {
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      font-weight: 300;
-      color: rgba(44, 44, 44, 1);
+      font-weight: 400;
+      color: #2C2C2C;
       margin: 0 0 16px 0;
+      text-align: left;
+      display: block;
 
       @media (min-width: 768px) {
         font-size: 16px;
@@ -709,46 +906,83 @@ p{
   }
 }
 
-// Live apps styles for use outside of hero (e.g., in projects section)
-.live-apps {
-  margin-top: 0;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 0;
-
-  .live-apps-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    margin: 0 0 2px 0;
-    color: #0E0E0E;
-
-    @media (min-width: 768px) {
-      font-size: 24px;
-    }
-  }
-
-  .live-apps-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    color: rgba(44, 44, 44, 1);
-    margin: 0;
-
-    @media (min-width: 768px) {
-      font-size: 16px;
-    }
-  }
-}
-
 // Fintech wrapper to group live-apps and industry together
 .fintech-wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
-  
+
+  // My work section only (filters + heading row)
   .live-apps {
+    margin-top: 0;
     margin-bottom: 16px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 24px;
+
+    .live-apps-heading {
+      flex: 0 0 auto;
+    }
+
+    .live-apps-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0 0 2px 0;
+      color: #0E0E0E;
+
+      @media (min-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    .live-apps-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(44, 44, 44, 1);
+      margin: 0;
+
+      @media (min-width: 768px) {
+        font-size: 16px;
+      }
+    }
+
+    .work-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 0 0 auto;
+    }
+
+    .work-filter-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #010101;
+      background: #EAEAEA;
+      border: none;
+      border-radius: 25px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+
+      &:hover {
+        background: #d8d8d8;
+      }
+
+      &.active {
+        background: #000;
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -888,6 +1122,23 @@ p{
 
           @media (min-width: 768px){
             gap: 16px;
+          }
+
+          /* Single image: full width, larger display (e.g. Zapmed X) */
+          &:has(.byte-case-image:only-child){
+            grid-template-columns: 1fr;
+
+            .byte-case-image{
+              width: 100%;
+              min-height: 280px;
+              height: auto;
+              border-radius: 4px;
+              object-fit: cover;
+
+              @media (min-width: 768px){
+                min-height: 360px;
+              }
+            }
           }
 
           .byte-case-image{
