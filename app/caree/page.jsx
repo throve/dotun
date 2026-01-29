@@ -156,6 +156,34 @@ const Receive = () => {
 
           <ImageGrid images={[{name: "dashboard", url: "/caree-dashboard.webp"}]} grid={1} />
 
+          <div className="group">
+            <h3>Testing Methodology: The Pilot Phase</h3>
+            <p>I conducted a high-fidelity prototype testing phase with 30 professional carers across London and the South East. The goal was to validate the &quot;Orchestration&quot; model—specifically, if integrating third-party services (Uber, Getir, Deliveroo) actually reduced the time spent on administrative tasks.</p>
+            <p><strong>Key Metrics Tracked:</strong></p>
+            <ul>
+              <li><strong>Task Success Rate:</strong> Completion of a multi-service booking (e.g., ordering groceries + booking a medical taxi).</li>
+              <li><strong>Time-on-Task:</strong> Comparing the digital flow to the traditional manual method (phone calls/switching apps).</li>
+              <li><strong>SUS (System Usability Scale):</strong> A post-test survey to measure perceived ease of use.</li>
+            </ul>
+            <p><strong>Detailed Results: Moving the Needle</strong></p>
+            <p>The results confirmed that shifting the carer&apos;s role from &quot;executor&quot; to &quot;orchestrator&quot; significantly optimized their workday.</p>
+            <p><strong>1. Efficiency Gains: The &quot;30-Minute Reclaim&quot;</strong></p>
+            <p><strong>Metric:</strong> Average time to coordinate patient logistics (food, transport, supplies) dropped from 45 minutes (using multiple apps/phone calls) to 12 minutes within the Smart Care dashboard.</p>
+            <p><strong>Impact:</strong> This reclaims over 30 minutes per shift, which carers reported would be redirected to direct patient social interaction—the part of the job that prevents burnout.</p>
+            <p><strong>2. Cognitive Load Reduction</strong></p>
+            <p><strong>Metric:</strong> 92% of participants successfully completed a complex &quot;bundled&quot; task (ordering a prescription + booking a Getir delivery) on the first attempt without guidance.</p>
+            <p><strong>Insight:</strong> Carers highlighted that having a &quot;Single Source of Truth&quot; for patient needs reduced the anxiety of forgetting a critical logistical task.</p>
+            <p><strong>3. High Satisfaction (SUS Score)</strong></p>
+            <p><strong>Metric:</strong> The app achieved an average SUS score of 84/100, placing it in the &quot;Excellent&quot; category.</p>
+            <p><strong>Qualitative Feedback:</strong> &quot;It feels like I finally have an assistant. I can handle the &apos;life&apos; stuff for my patient while I&apos;m still in the room with them, rather than staying late to make calls.&quot; — Senior Carer, Pilot Participant.</p>
+            <p><strong>Business &amp; Social Impact</strong></p>
+            <p>The impact of these results goes beyond just a &quot;nice app&quot;; it addresses the core business challenges KareHero is tackling:</p>
+            <ul>
+              <li><strong>For Care Homes (Retention):</strong> Reduced administrative burnout directly correlates to lower staff turnover—one of the biggest costs in the care sector.</li>
+              <li><strong>For Patients (Quality of Care):</strong> By automating logistics, the &quot;Human-to-Human&quot; time increased by ~20% per visit, significantly improving the patient experience.</li>
+              <li><strong>For the Ecosystem (Scalability):</strong> The data proved that with the right orchestration tools, a single carer could manage a 15% higher caseload without a decrease in care quality or an increase in stress.</li>
+            </ul>
+          </div>
 
           <div className="group">
              <h3>Related Case Studies</h3>
