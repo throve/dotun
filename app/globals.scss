@@ -682,6 +682,45 @@ p, li{
     }
   }
 
+  .navbar-social {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 16px;
+
+    a {
+      font-weight: 400;
+      font-size: 16px;
+      transition: opacity 0.2s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .navbar-avatar-link {
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  .navbar-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
   .mob{
     display: flex;
     

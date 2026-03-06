@@ -57,7 +57,7 @@ const Navbar = ({ color, tabs }) => {
     <div ref={navbarRef} className={`navbar ${tabs?.length ? 'navbar--with-tabs' : ''} ${inter.className}`}>
         <div className="logo desk" onClick={() => linkTo('/')}  style={{color: color}} >Adedotun Ayodimeji <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
         <div className="logo mob" onClick={() => linkTo('/')} style={{color: color}} >AY <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
-        {tabs?.length > 0 && (
+        {tabs?.length > 0 ? (
           <div className="navbar-tabs">
             {tabs.map(({ label, sectionId }) => (
               <button
@@ -70,10 +70,26 @@ const Navbar = ({ color, tabs }) => {
               </button>
             ))}
           </div>
+        ) : (
+          <div className="navbar-social">
+            <a href="https://www.linkedin.com/in/adedotun-ayodimeji-310697182/" target="_blank" rel="noopener noreferrer" style={{ color: color === 'white' ? '#fff' : '#000' }}>LinkedIn</a>
+            <a href="https://github.com/akadedotun" target="_blank" rel="noopener noreferrer" style={{ color: color === 'white' ? '#fff' : '#000' }}>Github</a>
+          </div>
         )}
-        <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" className="navbar-cv-link">
-          <button className={`${inter.className}`}><span>Download CV</span></button>
-        </a>
+        <div className="navbar-right">
+          <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" className="navbar-cv-link">
+            <button className={`${inter.className}`}><span>Download CV</span></button>
+          </a>
+          <a href="https://www.linkedin.com/in/adedotun-ayodimeji-310697182/" target="_blank" rel="noopener noreferrer" className="navbar-avatar-link" aria-label="Profile">
+            <img
+              src="https://res.cloudinary.com/dvsi1jmrp/image/upload/c_fill,w_40,h_40/v1772793786/WhatsApp_Image_2026-03-06_at_08.42.22_2_kh00fq.png"
+              alt="Adedotun Ayodimeji"
+              className="navbar-avatar"
+              width={40}
+              height={40}
+            />
+          </a>
+        </div>
         {tabs?.length > 0 && (
           <>
             <button
