@@ -732,9 +732,9 @@ p, li{
     .navbar-avatar-hover {
       position: absolute;
       left: 50%;
-      bottom: 100%;
+      top: 100%;
       transform: translateX(-50%);
-      margin-bottom: 8px;
+      margin-top: 8px;
       width: 200px;
       height: auto;
       max-height: 280px;
