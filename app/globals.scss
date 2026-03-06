@@ -683,10 +683,14 @@ p, li{
   }
 
   .navbar-social {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 24px;
     margin: 0 16px;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
 
     a {
       font-weight: 400;
@@ -705,12 +709,115 @@ p, li{
     display: flex;
     align-items: center;
     gap: 12px;
+    position: relative;
+  }
+
+  &:not(.navbar--with-tabs) .navbar-cv-link {
+    @media (max-width: 767px) {
+      display: none !important;
+    }
+  }
+
+  .navbar-avatar-desk {
+    display: none;
+    flex-shrink: 0;
+    line-height: 0;
+    position: relative;
+    cursor: default;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    .navbar-avatar-hover {
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      transform: translateX(-50%);
+      margin-bottom: 8px;
+      width: 200px;
+      height: auto;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      pointer-events: none;
+      z-index: 1001;
+    }
+
+    @media (hover: hover) {
+      &:hover .navbar-avatar-hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   .navbar-avatar-link {
     display: block;
     flex-shrink: 0;
     line-height: 0;
+  }
+
+  .navbar-profile-trigger-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .navbar-avatar-trigger {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    line-height: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .navbar-avatar {
+      display: block;
+    }
+  }
+
+  .navbar-profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    min-width: 160px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      padding: 10px 16px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #000;
+      text-decoration: none;
+      transition: background 0.15s ease;
+
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
   }
 
   .navbar-avatar {

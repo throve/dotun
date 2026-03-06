@@ -8,8 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 const Navbar = ({ color, tabs }) => {
   const [activeTab, setActiveTab] = useState(tabs?.[0]?.sectionId ?? null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false)
   const navbarRef = useRef(null)
   const router = useRouter()
+  const hasTabs = tabs?.length > 0
 
   const linkTo = (x) => router.push(x)
 
@@ -53,6 +55,17 @@ const Navbar = ({ color, tabs }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [tabs?.length, mobileMenuOpen])
 
+  useEffect(() => {
+    if (hasTabs || !profileMenuOpen) return
+    const handleClickOutside = (e) => {
+      if (navbarRef.current && !navbarRef.current.contains(e.target)) {
+        setProfileMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [hasTabs, profileMenuOpen])
+
   return (
     <div ref={navbarRef} className={`navbar ${tabs?.length ? 'navbar--with-tabs' : ''} ${inter.className}`}>
         <div className="logo desk" onClick={() => linkTo('/')}  style={{color: color}} >Adedotun Ayodimeji <img src={ color == "black"? "/emoji.svg" : "/emoji-w.svg"} alt="" /> </div>
@@ -80,7 +93,7 @@ const Navbar = ({ color, tabs }) => {
           <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" className="navbar-cv-link">
             <button className={`${inter.className}`}><span>Download CV</span></button>
           </a>
-          <a href="https://www.linkedin.com/in/adedotun-ayodimeji-310697182/" target="_blank" rel="noopener noreferrer" className="navbar-avatar-link" aria-label="Profile">
+          <div className="navbar-avatar-desk" aria-label="Profile">
             <img
               src="https://res.cloudinary.com/dvsi1jmrp/image/upload/c_fill,w_40,h_40/v1772793786/WhatsApp_Image_2026-03-06_at_08.42.22_2_kh00fq.png"
               alt="Adedotun Ayodimeji"
@@ -88,7 +101,39 @@ const Navbar = ({ color, tabs }) => {
               width={40}
               height={40}
             />
-          </a>
+            <img
+              src="https://res.cloudinary.com/dvsi1jmrp/image/upload/v1772796144/WhatsApp_Image_2026-03-06_at_08.42.22_vyrabi.jpg"
+              alt=""
+              className="navbar-avatar-hover"
+              aria-hidden
+            />
+          </div>
+          {!hasTabs && (
+            <div className="navbar-profile-trigger-wrap">
+              <button
+                type="button"
+                className={`navbar-avatar-trigger ${profileMenuOpen ? 'open' : ''}`}
+                onClick={() => setProfileMenuOpen(!profileMenuOpen)}
+                aria-label="Open menu"
+                aria-expanded={profileMenuOpen}
+              >
+                <img
+                  src="https://res.cloudinary.com/dvsi1jmrp/image/upload/c_fill,w_40,h_40/v1772793786/WhatsApp_Image_2026-03-06_at_08.42.22_2_kh00fq.png"
+                  alt=""
+                  className="navbar-avatar"
+                  width={40}
+                  height={40}
+                />
+              </button>
+              {profileMenuOpen && (
+                <div className="navbar-profile-dropdown" role="menu">
+                  <a href="https://www.linkedin.com/in/adedotun-ayodimeji-310697182/" target="_blank" rel="noopener noreferrer" role="menuitem" onClick={() => setProfileMenuOpen(false)}>LinkedIn</a>
+                  <a href="https://github.com/akadedotun" target="_blank" rel="noopener noreferrer" role="menuitem" onClick={() => setProfileMenuOpen(false)}>Github</a>
+                  <a href="/Ayo-cv.pdf?v=3" target="_blank" download="Ayo-cv.pdf" role="menuitem" onClick={() => setProfileMenuOpen(false)}>Download CV</a>
+                </div>
+              )}
+            </div>
+          )}
         </div>
         {tabs?.length > 0 && (
           <>
