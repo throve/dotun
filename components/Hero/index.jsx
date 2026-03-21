@@ -16,7 +16,8 @@ const Hero = () => {
     }
 
     const textPart1 = "I'm a Product Designer in London, "
-    const textPart2 = "Previously at TELUS Health, now exploring new opportunities."
+    const textPart2Prefix = "Previously at TELUS Health, now exploring "
+    const textPart2Suffix = "new opportunities."
     
     // Wait for refs to be available
     const initAnimation = () => {
@@ -52,14 +53,31 @@ const Hero = () => {
         tl.to({}, { duration: delay })
       })
 
-      // Move cursor to second line and type second part (black) with cursor
-      textPart2.split('').forEach((char) => {
+      // Type second part (black): prefix, then suffix in a span (mobile line break before "new opportunities.")
+      textPart2Prefix.split('').forEach((char) => {
         const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
-        
+
         tl.call(() => {
           currentText2 += char
           typingElement.innerHTML = currentText
-          typingElement2.innerHTML = currentText2 + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+          typingElement2.innerHTML =
+            currentText2 + '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span>'
+        })
+        tl.to({}, { duration: delay })
+      })
+
+      let currentSuffix = ''
+      textPart2Suffix.split('').forEach((char) => {
+        const delay = char === ' ' ? 0.03 : char === ',' || char === '.' ? 0.15 : 0.06
+
+        tl.call(() => {
+          currentSuffix += char
+          typingElement.innerHTML = currentText
+          typingElement2.innerHTML =
+            currentText2 +
+            '<span class="hero-line-opportunities">' +
+            currentSuffix +
+            '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span></span>'
         })
         tl.to({}, { duration: delay })
       })
@@ -67,7 +85,11 @@ const Hero = () => {
       // After typing is complete, remove inline cursor
       tl.call(() => {
         typingElement.innerHTML = currentText
-        typingElement2.innerHTML = currentText2
+        typingElement2.innerHTML =
+          currentText2 +
+          '<span class="hero-line-opportunities">' +
+          currentSuffix +
+          '</span>'
       })
     }
 

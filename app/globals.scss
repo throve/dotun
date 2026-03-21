@@ -893,6 +893,19 @@ p{
     .hero-location-black-wrapper {
       display: inline-block;
       white-space: nowrap;
+
+      @media (max-width: 767px) {
+        white-space: normal;
+        max-width: 100%;
+      }
+    }
+
+    .hero-line-opportunities {
+      display: inline;
+
+      @media (max-width: 767px) {
+        display: block;
+      }
     }
 
     .hero-location-black {
