@@ -41,3 +41,10 @@ yes/*
 !yes/*.js
 !yes/*.ts
 public/_next-video
+
+# HuntaPay case study (local WIP — deploy separately when ready)
+/app/huntapay/
+/components/HuntaPayCaseStudy/
+
+# Cursor IDE
+.cursor/

@@ -5,22 +5,6 @@ export const fintech = {
 
     startups: [
         {
-            name: "HuntaPay",
-            des: "UK consumers face a clunky, trust-eroding redirect every time they pay by bank. SME merchants pay 1.5–2.5% of every transaction to American card networks. A wallet layer on open banking rails can eliminate both but only if the UX is good enough to compete with Apple Pay.",
-            caseStudies: [
-                {
-                    title: "Can Pay by Bank feel like Apple Pay?",
-                    caseStudyUrl: "/huntapay",
-                    header: "Can Pay by Bank feel like Apple Pay?",
-                    images: [
-                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1771613602/Simulator_Screenshot_-_iPhone_17_Pro_-_2026-02-20_at_18.17.51_r8jls9.png",
-                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1771613744/Simulator_Screenshot_-_iPhone_17_Pro_-_2026-02-20_at_18.20.28_nqhstz.png",
-                        "https://res.cloudinary.com/dvsi1jmrp/image/upload/v1771613745/Simulator_Screenshot_-_iPhone_17_Pro_-_2026-02-20_at_18.20.48_fzjfrm.png"
-                    ]
-                }
-            ]
-        },
-        {
             name: "Byte (Expert dojo-23)",
             des: "Connecting Everyone Through Payments. Byte enables users in Nigeria to pay and receive money using phone numbers, byte tags, and email. During my time at Byte, I wore many hats. I started as a founding UX/UI designer in 2021 and later led the design team in 2022.",
             caseStudies: [

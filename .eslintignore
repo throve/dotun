@@ -1,0 +1,3 @@
+# HuntaPay WIP — excluded from lint/build until ready to ship
+components/HuntaPayCaseStudy/
+app/huntapay/
