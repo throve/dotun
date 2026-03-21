@@ -16,7 +16,7 @@ const Hero = () => {
     }
 
     const textPart1 = "I'm a Product Designer in London, "
-    const textPart2 = "Designing experiences at TELUS Health."
+    const textPart2 = "Previously at TELUS Health, now exploring new opportunities."
     
     // Wait for refs to be available
     const initAnimation = () => {
