@@ -16,7 +16,7 @@ const IndexFooter = () => {
         {
           Company: "Telus Health",
           Position: "UX Designer",
-          Status: "Present"
+          Status: "2026"
         },
         {
           Company: "SparkHQ",
