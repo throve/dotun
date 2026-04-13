@@ -19,6 +19,11 @@ const IndexFooter = () => {
           Status: "2026"
         },
         {
+          Company: "Littleseconds",
+          Position: "Product designer",
+          Status: "2023"
+        },
+        {
           Company: "SparkHQ",
           Position: "Founder",
           Status: "Present"
