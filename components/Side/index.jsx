@@ -12,9 +12,11 @@ const Side = () => {
 
    return ( 
     <div className="industry" >
-        <div className="industry-tag" style={{backgroundColor: data.color}} >
-            <img src={data.icon} alt="" />
-            <p>Side projects</p>
+        <div className="industry-inner">
+            <div className="industry-tag" style={{backgroundColor: data.color}} >
+                <img src={data.icon} alt="" />
+                <p>Side projects</p>
+            </div>
         </div>
 
         <div className="companies">

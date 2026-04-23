@@ -1172,6 +1172,24 @@ p{
     padding: 32px 29px;
 
   }
+
+  @media (min-width: 1200px){
+    padding-left: 56px;
+    padding-right: 56px;
+
+    .industry-inner{
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .companies{
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 .industry-tag{

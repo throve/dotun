@@ -70,9 +70,11 @@ const Fintech = () => {
         </section>
 
         <div className="industry" >
-            <div className="industry-tag" style={{backgroundColor: data.color}} >
-                <img src={data.icon} alt="" />
-                <p>FinTech</p>
+            <div className="industry-inner">
+                <div className="industry-tag" style={{backgroundColor: data.color}} >
+                    <img src={data.icon} alt="" />
+                    <p>FinTech</p>
+                </div>
             </div>
 
             <div className="companies">
