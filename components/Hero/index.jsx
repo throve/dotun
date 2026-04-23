@@ -147,6 +147,14 @@ const Hero = () => {
               <h3 className="app-description">SparkHQ: Website inspiration website for designers</h3>
               <a href="https://www.sparkhq.io/" target="_blank" rel="noopener noreferrer" className="app-cta">Visit website</a>
             </div>
+
+            <div className="app-item">
+              <div className="app-card app-card--blue">
+                <img src="/new/govuk.png" alt="GOV.UK" className="app-logo" />
+              </div>
+              <h3 className="app-description">Gov.UK: Interaction design prototype using GDS. Ps:54321</h3>
+              <a href="https://govukprototype-production.up.railway.app" target="_blank" rel="noopener noreferrer" className="app-cta">Visit website</a>
+            </div>
           </div>
         </section>
     </div>
