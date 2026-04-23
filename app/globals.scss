@@ -79,6 +79,10 @@ p, li{
       padding: 0;
       padding-top: 60px;
     }
+
+    @media (min-width: 1200px){
+      max-width: 1160px;
+    }
     }
   }
 
@@ -975,6 +979,10 @@ p{
 
       @media (min-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
 
