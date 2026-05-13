@@ -90,9 +90,9 @@ const Navbar = ({ color, tabs }) => {
           </div>
         )}
         <div className="navbar-right">
-          <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" className="navbar-cv-link">
+          <span className="navbar-cv-link">
             <button className={`${inter.className}`}><span>Download CV</span></button>
-          </a>
+          </span>
           <div className="navbar-avatar-desk" aria-label="Profile">
             <img
               src="https://res.cloudinary.com/dvsi1jmrp/image/upload/c_fill,w_40,h_40/v1772793786/WhatsApp_Image_2026-03-06_at_08.42.22_2_kh00fq.png"
@@ -129,7 +129,7 @@ const Navbar = ({ color, tabs }) => {
                 <div className="navbar-profile-dropdown" role="menu">
                   <a href="https://www.linkedin.com/in/adedotun-ayodimeji-310697182/" target="_blank" rel="noopener noreferrer" role="menuitem" onClick={() => setProfileMenuOpen(false)}>LinkedIn</a>
                   <a href="https://github.com/akadedotun" target="_blank" rel="noopener noreferrer" role="menuitem" onClick={() => setProfileMenuOpen(false)}>Github</a>
-                  <a href="/Ayo-cv.pdf?v=3" target="_blank" download="Ayo-cv.pdf" role="menuitem" onClick={() => setProfileMenuOpen(false)}>Download CV</a>
+                  <a role="menuitem" onClick={() => setProfileMenuOpen(false)}>Download CV</a>
                 </div>
               )}
             </div>
@@ -159,9 +159,9 @@ const Navbar = ({ color, tabs }) => {
                     {label}
                   </button>
                 ))}
-                <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf">
+                <span>
                   <button className="navbar-mobile-cv"><span>Download CV</span></button>
-                </a>
+                </span>
               </div>
             )}
           </>

@@ -150,9 +150,9 @@ const Receive = () => {
               Metrics
             </button>
           </div>
-          <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf" className="receive-cv-link">
+          <span className="receive-cv-link">
             <button className="receive-cv-button"><span>Download CV</span></button>
-          </a>
+          </span>
           <button 
             className={`mobile-menu-toggle ${mobileMenuOpen ? 'open' : ''}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -182,9 +182,9 @@ const Receive = () => {
               >
                 Metrics
               </button>
-              <a href="/Ayo-cv.pdf?v=3" target='_blank' download="Ayo-cv.pdf">
+              <span>
                 <button className="receive-cv-button"><span>Download CV</span></button>
-              </a>
+              </span>
             </div>
           )}
         </div>
