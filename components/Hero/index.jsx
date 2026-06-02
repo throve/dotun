@@ -16,8 +16,8 @@ const Hero = () => {
     }
 
     const textPart1 = "I'm a Product Designer in London, "
-    const textPart2Prefix = "Previously at TELUS Health, now exploring "
-    const textPart2Suffix = "new opportunities."
+    const textPart2Prefix = "Previously at TELUS Health, "
+    const textPart2Suffix = "now at TPXImpact."
     
     // Wait for refs to be available
     const initAnimation = () => {
@@ -75,7 +75,7 @@ const Hero = () => {
           typingElement.innerHTML = currentText
           typingElement2.innerHTML =
             currentText2 +
-            '<span class="hero-line-opportunities">' +
+            '<span class="hero-line-opportunities hero-location-black">' +
             currentSuffix +
             '<span class="typing-cursor" style="opacity: 1; margin-left: 2px;">|</span></span>'
         })
@@ -87,7 +87,7 @@ const Hero = () => {
         typingElement.innerHTML = currentText
         typingElement2.innerHTML =
           currentText2 +
-          '<span class="hero-line-opportunities">' +
+          '<span class="hero-line-opportunities hero-location-black">' +
           currentSuffix +
           '</span>'
       })
@@ -111,10 +111,10 @@ const Hero = () => {
         <p className="hero-intro">
           My name is Adedotun Ayodimeji, or AY.<br /> 
           <span className="hero-location">
-            <span ref={typingTextRef} className="hero-location-text"></span>
+            <span ref={typingTextRef} className="hero-location-black"></span>
             <br />
             <span className="hero-location-black-wrapper">
-              <span ref={typingTextRef2} className="hero-location-black"></span>
+              <span ref={typingTextRef2} className="hero-location-text"></span>
             </span>
           </span>
         </p>
